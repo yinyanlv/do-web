@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {SubjectService} from 'ngx-joy/services';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'do-web';
+
+  constructor(private subject: SubjectService) {
+
+    this.subject.subscribe('test', (data) => {
+      this.title = data;
+    });
+
+    setTimeout(() => {
+      this.subject.publish('test', 'changing');
+    }, 3000);
+  }
 }

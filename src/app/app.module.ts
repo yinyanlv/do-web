@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {TestModule} from 'ngx-joy/test';
+import {ServicesModule} from 'ngx-joy/services';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -14,7 +15,8 @@ import {LayoutsModule} from './layouts/layouts.module';
     BrowserModule,
     AppRoutingModule,
     LayoutsModule,
-    TestModule
+    TestModule,
+    ServicesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
