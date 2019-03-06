@@ -1,4 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
 import {TestModule} from 'ngx-joy/test';
 import {ServicesModule} from 'ngx-joy/services';
@@ -13,6 +14,7 @@ import {LayoutsModule} from './layouts/layouts.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     LayoutsModule,
     TestModule,
