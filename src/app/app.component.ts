@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {SubjectService} from 'ngx-joy/services';
+
+import {fakeNavItems} from '../fake-db/nav';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,10 @@ import {SubjectService} from 'ngx-joy/services';
 export class AppComponent {
   title = 'do-web';
 
-  constructor(private subject: SubjectService) {
+  navItems: any;
 
-    this.subject.subscribe('test', (data) => {
-      this.title = data;
-    });
+  constructor() {
 
-    setTimeout(() => {
-      this.subject.publish('test', 'changing');
-    }, 3000);
+    this.navItems = fakeNavItems;
   }
 }

@@ -1,20 +1,20 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ItemComponent } from './item.component';
+import {JNavVerticalItemComponent} from './item.component';
 
-describe('ItemComponent', () => {
-  let component: ItemComponent;
-  let fixture: ComponentFixture<ItemComponent>;
+describe('JNavVerticalItemComponent', () => {
+  let component: JNavVerticalItemComponent;
+  let fixture: ComponentFixture<JNavVerticalItemComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ItemComponent ]
+      declarations: [JNavVerticalItemComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ItemComponent);
+    fixture = TestBed.createComponent(JNavVerticalItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

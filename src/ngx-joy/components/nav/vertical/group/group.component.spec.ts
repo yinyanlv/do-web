@@ -1,20 +1,20 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { GroupComponent } from './group.component';
+import {JNavVerticalGroupComponent} from './group.component';
 
-describe('GroupComponent', () => {
-  let component: GroupComponent;
-  let fixture: ComponentFixture<GroupComponent>;
+describe('JNavVerticalGroupComponent', () => {
+  let component: JNavVerticalGroupComponent;
+  let fixture: ComponentFixture<JNavVerticalGroupComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GroupComponent ]
+      declarations: [JNavVerticalGroupComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GroupComponent);
+    fixture = TestBed.createComponent(JNavVerticalGroupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

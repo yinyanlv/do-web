@@ -1,3 +1,72 @@
-<p>
-  collapsible works!
-</p>
+<ng-container *ngIf="true" [ngSwitch]="true">
+
+  <!-- normal collapsible without callback -->
+  <a class="nav-link" [ngClass]="item.classes" *ngSwitchCase="!item.url && !item.externalUrl && !item.function"
+     (click)="toggleOpen($event)">
+    <ng-container *ngTemplateOutlet="itemContent"></ng-container>
+  </a>
+
+  <!-- url without callback -->
+  <a class="nav-link" [ngClass]="item.classes" *ngSwitchCase="item.url && !item.function" (click)="toggleOpen($event)"
+     [routerLink]="[item.url]"
+     [routerLinkActive]="['active', 'accent']"
+     [routerLinkActiveOptions]="{exact: item.exactMatch || false}"
+     [target]="item.openInNewTab ? '_blank' : '_self'"
+  >
+    <ng-container *ngTemplateOutlet="itemContent"></ng-container>
+  </a>
+
+  <!-- externalUrl without callback -->
+  <a class="nav-link" [ngClass]="item.classes" *ngSwitchCase="!item.url && item.externalUrl && !item.function"
+     (click)="toggleOpen($event)"
+     [href]="item.url"
+     [target]="item.openInNewTab ? '_blank' : '_self'"
+  >
+    <ng-container *ngTemplateOutlet="itemContent"></ng-container>
+  </a>
+
+  <!-- normal collapsible with callback -->
+  <a class="nav-link" [ngClass]="item.classes" *ngSwitchCase="!item.url && !item.externalUrl && item.function"
+     (click)="toggleOpen($event); item.function($event, item)">
+    <ng-container *ngTemplateOutlet="itemContent"></ng-container>
+  </a>
+
+  <!-- url with callback -->
+  <a class="nav-link" [ngClass]="item.classes" *ngSwitchCase="item.url && item.function"
+     (click)="toggleOpen($event); item.function($event, item)"
+     [routerLink]="[item.url]"
+     [routerLinkActive]="['active', 'accent']"
+     [routerLinkActiveOptions]="{exact: item.exactMatch || false}"
+     [target]="item.openInNewTab ? '_blank' : '_self'"
+  >
+    <ng-container *ngTemplateOutlet="itemContent"></ng-container>
+  </a>
+
+  <!-- external without callback -->
+  <a class="nav-link" [ngClass]="item.classes" *ngSwitchCase="!item.url && item.externalUrl && item.function"
+     (click)="toggleOpen($event); item.function($event, item)"
+     [href]="item.url"
+     [target]="item.openInNewTab ? '_blank' : '_self'"
+  >
+    <ng-container *ngTemplateOutlet="itemContent"></ng-container>
+  </a>
+
+  <div class="children" [@jSlideInOut]="isOpen ? 'show' : 'hide'">
+    <ng-container *ngFor="let subItem of item.children">
+      <ng-container [ngSwitch]="subItem.type">
+        <j-nav-vertical-group *ngSwitchCase="'group'" [item]="subItem"></j-nav-vertical-group>
+        <j-nav-vertical-collapsible *ngSwitchCase="'collapsible'" [item]="subItem"></j-nav-vertical-collapsible>
+        <j-nav-vertical-item *ngSwitchCase="'item'" [item]="subItem"></j-nav-vertical-item>
+      </ng-container>
+    </ng-container>
+  </div>
+</ng-container>
+
+<ng-template #itemContent>
+  <mat-icon class="nav-link-icon" *ngIf="item.icon">{{item.icon}}</mat-icon>
+  <span class="nav-link-title">{{item.title}}</span>
+  <span class="nav-link-badge" *ngIf="item.badge"
+        [ngStyle]="{'color': item.badge.fg, 'background-color': item.badge.bg}">{{item.badge.title}}</span>
+  <mat-icon class="collapsible-arrow">chevron_right</mat-icon>
+</ng-template>
+

@@ -1,11 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostBinding, Input, OnInit} from '@angular/core';
+import {JNavItem} from '../../nav.component';
 
 @Component({
-  selector: 'j-nav-vertial-group',
+  selector: 'j-nav-vertical-group',
   templateUrl: './group.component.html',
   styleUrls: ['./group.component.scss']
 })
-export class NavVerticalGroupComponent implements OnInit {
+export class JNavVerticalGroupComponent implements OnInit {
+
+  @HostBinding('class')
+  classes: string = 'nav-item nav-group';
+
+  @Input()
+  item: JNavItem;
 
   constructor() { }
 

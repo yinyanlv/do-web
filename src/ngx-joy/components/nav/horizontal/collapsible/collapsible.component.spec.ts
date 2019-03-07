@@ -1,20 +1,20 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CollapsibleComponent } from './collapsible.component';
+import {JNavHorizontalCollapsibleComponent} from './collapsible.component';
 
-describe('CollapsibleComponent', () => {
-  let component: CollapsibleComponent;
-  let fixture: ComponentFixture<CollapsibleComponent>;
+describe('JNavHorizontalCollapsibleComponent', () => {
+  let component: JNavHorizontalCollapsibleComponent;
+  let fixture: ComponentFixture<JNavHorizontalCollapsibleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CollapsibleComponent ]
+      declarations: [JNavHorizontalCollapsibleComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CollapsibleComponent);
+    fixture = TestBed.createComponent(JNavHorizontalCollapsibleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,3 +1,14 @@
-<p>
-  group works!
-</p>
+<ng-container>
+  <div class="group-title" [ngClass]="item.classes">
+    <span class="hint-text">{{item.title}}</span>
+  </div>
+  <div class="group-items">
+    <ng-container *ngFor="let subItem of item.children">
+      <ng-container [ngSwitch]="subItem.type">
+        <j-nav-vertical-group *ngSwitchCase="'group'" [item]="subItem"></j-nav-vertical-group>
+        <j-nav-vertical-collapsible *ngSwitchCase="'collapsible'" [item]="subItem"></j-nav-vertical-collapsible>
+        <j-nav-vertical-item *ngSwitchCase="'item'" [item]="subItem"></j-nav-vertical-item>
+      </ng-container>
+    </ng-container>
+  </div>
+</ng-container>

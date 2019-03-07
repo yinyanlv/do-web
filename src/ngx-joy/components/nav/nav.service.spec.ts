@@ -1,12 +1,12 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { NavService } from './nav.service';
+import {JNavService} from './nav.service';
 
-describe('NavService', () => {
+describe('JNavService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: NavService = TestBed.get(NavService);
+    const service: JNavService = TestBed.get(JNavService);
     expect(service).toBeTruthy();
   });
 });

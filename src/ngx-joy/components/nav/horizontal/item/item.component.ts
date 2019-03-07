@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss']
 })
-export class NavHorizontalItemComponent implements OnInit {
+export class JNavHorizontalItemComponent implements OnInit {
 
   constructor() { }
 

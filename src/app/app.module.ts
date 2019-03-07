@@ -1,12 +1,10 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
-import {TestModule} from 'ngx-joy/test';
-import {ServicesModule} from 'ngx-joy/services';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {LayoutsModule} from './layouts/layouts.module';
+import {JNavModule} from '../ngx-joy/components';
 
 @NgModule({
   declarations: [
@@ -17,8 +15,7 @@ import {LayoutsModule} from './layouts/layouts.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     LayoutsModule,
-    TestModule,
-    ServicesModule
+    JNavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

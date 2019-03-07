@@ -1,24 +1,35 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {NavComponent} from './nav.component';
-import {NavHorizontalItemComponent} from './horizontal/item/item.component';
-import {NavHorizontalCollapsibleComponent} from './horizontal/collapsible/collapsible.component';
-import {NavVerticalItemComponent} from './vertical/item/item.component';
-import {NavVerticalCollapsibleComponent} from './vertical/collapsible/collapsible.component';
-import {NavVerticalGroupComponent} from './vertical/group/group.component';
+import {RouterModule} from '@angular/router';
+import {MatIconModule} from '@angular/material';
+import {JNavComponent} from './nav.component';
+import {JNavHorizontalItemComponent} from './horizontal/item/item.component';
+import {JNavHorizontalCollapsibleComponent} from './horizontal/collapsible/collapsible.component';
+import {JNavVerticalItemComponent} from './vertical/item/item.component';
+import {JNavVerticalCollapsibleComponent} from './vertical/collapsible/collapsible.component';
+import {JNavVerticalGroupComponent} from './vertical/group/group.component';
+
+const components = [
+  JNavComponent,
+  JNavHorizontalItemComponent,
+  JNavHorizontalCollapsibleComponent,
+  JNavVerticalItemComponent,
+  JNavVerticalCollapsibleComponent,
+  JNavVerticalGroupComponent
+];
 
 @NgModule({
-  declarations: [
-    NavComponent,
-    NavHorizontalItemComponent,
-    NavHorizontalCollapsibleComponent,
-    NavVerticalItemComponent,
-    NavVerticalCollapsibleComponent,
-    NavVerticalGroupComponent
-  ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    MatIconModule
+  ],
+  declarations: [
+    ...components
+  ],
+  exports: [
+    ...components
   ]
 })
-export class NavModule {
+export class JNavModule {
 }

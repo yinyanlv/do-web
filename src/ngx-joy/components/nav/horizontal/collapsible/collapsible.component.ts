@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './collapsible.component.html',
   styleUrls: ['./collapsible.component.scss']
 })
-export class NavHorizontalCollapsibleComponent implements OnInit {
+export class JNavHorizontalCollapsibleComponent implements OnInit {
 
   constructor() { }
 
