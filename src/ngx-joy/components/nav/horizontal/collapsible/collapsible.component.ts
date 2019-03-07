@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
+import {JNavItem} from '../../nav.component';
 
 @Component({
   selector: 'j-nav-horizontal-collapsible',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JNavHorizontalCollapsibleComponent implements OnInit {
 
-  constructor() { }
+  isOpen: boolean = false;
+
+  @Input()
+  item: JNavItem;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  @HostListener('mouseenter')
+  open(): void {
+    this.isOpen = true;
+  }
+
+  @HostListener('mouseleave')
+  close(): void {
+    this.isOpen = false;
+  }
 }

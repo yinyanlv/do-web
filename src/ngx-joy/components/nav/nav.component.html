@@ -1,5 +1,6 @@
 <div class="nav" [ngClass]="{'horizontal': !isVerticalLayout(), 'vertical': isVerticalLayout()}">
 
+  <!-- vertical layout -->
   <ng-container *ngIf="isVerticalLayout()">
     <ng-container *ngFor="let item of items;">
       <ng-container [ngSwitch]="item.type">
@@ -10,8 +11,15 @@
     </ng-container>
   </ng-container>
 
+  <!-- horizontal layout -->
   <ng-container *ngIf="!isVerticalLayout()">
-    <div>here is horizontal Layout</div>
+    <ng-container *ngFor="let item of items;">
+      <ng-container [ngSwitch]="item.type">
+        <j-nav-horizontal-collapsible *ngSwitchCase="'group'" [item]="item"></j-nav-horizontal-collapsible>
+        <j-nav-horizontal-collapsible *ngSwitchCase="'collapsible'" [item]="item"></j-nav-horizontal-collapsible>
+        <j-nav-vertical-item *ngSwitchCase="'item'" [item]="item"></j-nav-vertical-item>
+      </ng-container>
+    </ng-container>
   </ng-container>
 
 </div>
