@@ -8,11 +8,11 @@ import {JNavItem} from '../../nav.component';
 })
 export class JNavHorizontalItemComponent implements OnInit {
 
-  @Input()
-  item: JNavItem;
-
   @HostBinding('class')
   classes = 'nav-item';
+
+  @Input()
+  item: JNavItem;
 
   constructor() { }
 

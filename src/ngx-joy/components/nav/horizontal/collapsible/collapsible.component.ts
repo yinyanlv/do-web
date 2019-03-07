@@ -1,4 +1,4 @@
-import {Component, HostListener, Input, OnInit} from '@angular/core';
+import {Component, HostBinding, HostListener, Input, OnInit} from '@angular/core';
 import {JNavItem} from '../../nav.component';
 
 @Component({
@@ -7,6 +7,9 @@ import {JNavItem} from '../../nav.component';
   styleUrls: ['./collapsible.component.scss']
 })
 export class JNavHorizontalCollapsibleComponent implements OnInit {
+
+  @HostBinding('class')
+  classes = 'nav-item nav-collapsible';
 
   isOpen: boolean = false;
 

@@ -1,6 +1,6 @@
 ::ng-deep .nav {
 
-  .nav-subheader {
+  .nav-sub-header {
     display: flex;
     align-items: center;
     height: 48px;
@@ -219,11 +219,11 @@
     }
   }
 
-  // Material 2 style
+  // Material2 style
   &.material2,
   .material2 & {
 
-    .nav-subheader {
+    .nav-sub-header {
       height: 40px;
     }
 
@@ -233,6 +233,7 @@
         height: 40px;
       }
     }
+
     .nav-item {
 
       .nav-link {

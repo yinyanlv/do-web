@@ -50,13 +50,15 @@
   </a>
 
   <div class="children" [ngClass]="{'open': isOpen }">
-    <ng-container *ngFor="let subItem of item.children">
-      <ng-container [ngSwitch]="subItem.type">
-        <j-nav-horizontal-collapsible *ngSwitchCase="'group'" [item]="subItem"></j-nav-horizontal-collapsible>
-        <j-nav-horizontal-collapsible *ngSwitchCase="'collapsible'" [item]="subItem"></j-nav-horizontal-collapsible>
-        <j-nav-horizontal-item *ngSwitchCase="'item'" [item]="subItem"></j-nav-horizontal-item>
+    <div style="background: #2D323E; color: white;">
+      <ng-container *ngFor="let subItem of item.children">
+        <ng-container [ngSwitch]="subItem.type">
+          <j-nav-horizontal-collapsible *ngSwitchCase="'group'" [item]="subItem"></j-nav-horizontal-collapsible>
+          <j-nav-horizontal-collapsible *ngSwitchCase="'collapsible'" [item]="subItem"></j-nav-horizontal-collapsible>
+          <j-nav-horizontal-item *ngSwitchCase="'item'" [item]="subItem"></j-nav-horizontal-item>
+        </ng-container>
       </ng-container>
-    </ng-container>
+    </div>
   </div>
 </ng-container>
 
