@@ -1,12 +1,12 @@
 import {Component, HostBinding, Input, OnInit} from '@angular/core';
 import {JNavItem} from '../../nav.component';
-import {jSlideInOutAnimation} from '../../../../animations/slide-in-out';
+import {jCollapsibleShowHideAnimation} from '../../../../animations/collapsible-show-hide';
 
 @Component({
   selector: 'j-nav-vertical-collapsible',
   templateUrl: './collapsible.component.html',
   styleUrls: ['./collapsible.component.scss'],
-  animations: [jSlideInOutAnimation]
+  animations: [jCollapsibleShowHideAnimation]
 })
 export class JNavVerticalCollapsibleComponent implements OnInit {
 

@@ -1,14 +1,36 @@
-import {trigger, state, style, transition, animate} from '@angular/animations';
+import {animate, AnimationTriggerMetadata, style, transition, trigger} from '@angular/animations';
 
-export const jSlideInOutAnimation = trigger('jSlideInOut', [
-  state('hide', style({
-    height: '0',
-    display: 'none'
-  })),
-  state('show', style({
-    height: '*',
-    display: 'block'
-  })),
-  transition('show => hide', animate('300ms ease-out')),
-  transition('hide => show', animate('300ms ease-in'))
+export const jSlideInOutAnimation: AnimationTriggerMetadata = trigger('jSlideInOut', [
+  transition('void => left-in-right-out', [
+    style({
+      transform: 'translateX(-100%)'
+    }),
+    animate('300ms ease-in', style({
+      transform: 'translateX(0)'
+    }))
+  ]),
+  transition('left-in-right-out => void', [
+    style({
+      transform: 'translateX(0)'
+    }),
+    animate('300ms ease-out', style({
+      transform: 'translateX(100%)'
+    }))
+  ]),
+  transition('void => right-in-left-out', [
+    style({
+      transform: 'translateX(100%)'
+    }),
+    animate('300ms ease-in', style({
+      transform: 'translateX(0)'
+    }))
+  ]),
+  transition('right-in-left-out => void', [
+    style({
+      transform: 'translateX(0)'
+    }),
+    animate('300ms ease-out', style({
+      transform: 'translateX(-100%)'
+    }))
+  ])
 ]);

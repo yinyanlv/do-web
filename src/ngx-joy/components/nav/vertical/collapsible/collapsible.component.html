@@ -51,7 +51,7 @@
     <ng-container *ngTemplateOutlet="itemContent"></ng-container>
   </a>
 
-  <div class="children" [@jSlideInOut]="isOpen ? 'show' : 'hide'">
+  <div class="children" [@jCollapsibleShowHide]="isOpen ? 'show' : 'hide'">
     <ng-container *ngFor="let subItem of item.children">
       <ng-container [ngSwitch]="subItem.type">
         <j-nav-vertical-group *ngSwitchCase="'group'" [item]="subItem"></j-nav-vertical-group>
