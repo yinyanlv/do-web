@@ -1,11 +1,16 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FullComponent} from './full/full.component';
+
+import {VerticalDefaultModule} from './vertical/default/default.module';
 
 @NgModule({
-  declarations: [FullComponent],
+  declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    VerticalDefaultModule
+  ],
+  exports: [
+    VerticalDefaultModule
   ]
 })
 export class LayoutsModule {
