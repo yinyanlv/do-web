@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VerticalDefaultComponent } from './default.component';
+import { JSidebarComponent } from './sidebar.component';
 
-describe('VerticalDefaultComponent', () => {
-  let component: VerticalDefaultComponent;
-  let fixture: ComponentFixture<VerticalDefaultComponent>;
+describe('JSidebarComponent', () => {
+  let component: JSidebarComponent;
+  let fixture: ComponentFixture<JSidebarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VerticalDefaultComponent ]
+      declarations: [ JSidebarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VerticalDefaultComponent);
+    fixture = TestBed.createComponent(JSidebarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
