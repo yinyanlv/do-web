@@ -895,8 +895,8 @@ export const fakeNavItems: JNavItem[] = [
         ]
       },
       {
-        id: 'working-with-fuse',
-        title: 'Working with Fuse',
+        id: 'working-with-j',
+        title: 'Working with ngx-joy',
         type: 'collapsible',
         icon: 'import_contacts',
         children: [
@@ -904,49 +904,49 @@ export const fakeNavItems: JNavItem[] = [
             id: 'server',
             title: 'Server',
             type: 'item',
-            url: '/documentation/working-with-fuse/server'
+            url: '/documentation/working-with-j/server'
           },
           {
             id: 'production',
             title: 'Production',
             type: 'item',
-            url: '/documentation/working-with-fuse/production'
+            url: '/documentation/working-with-j/production'
           },
           {
             id: 'directory-structure',
             title: 'Directory Structure',
             type: 'item',
-            url: '/documentation/working-with-fuse/directory-structure'
+            url: '/documentation/working-with-j/directory-structure'
           },
           {
-            id: 'updating-fuse',
-            title: 'Updating Fuse',
+            id: 'updating-j',
+            title: 'Updating ngx-joy',
             type: 'item',
-            url: '/documentation/working-with-fuse/updating-fuse'
+            url: '/documentation/working-with-j/updating-j'
           },
           {
             id: 'multi-language',
             title: 'Multi Language',
             type: 'item',
-            url: '/documentation/working-with-fuse/multi-language'
+            url: '/documentation/working-with-j/multi-language'
           },
           {
             id: 'material-theming',
             title: 'Material Theming',
             type: 'item',
-            url: '/documentation/working-with-fuse/material-theming'
+            url: '/documentation/working-with-j/material-theming'
           },
           {
             id: 'theme-layouts',
             title: 'Theme Layouts',
             type: 'item',
-            url: '/documentation/working-with-fuse/theme-layouts'
+            url: '/documentation/working-with-j/theme-layouts'
           },
           {
             id: 'page-layouts',
             title: 'Page Layouts',
             type: 'item',
-            url: '/documentation/working-with-fuse/page-layouts'
+            url: '/documentation/working-with-j/page-layouts'
           }
         ]
       },
@@ -1046,28 +1046,28 @@ export const fakeNavItems: JNavItem[] = [
         icon: 'import_contacts',
         children: [
           {
-            id: 'fuse-if-on-dom',
-            title: 'fuseIfOnDom',
+            id: 'j-if-on-dom',
+            title: 'jIfOnDom',
             type: 'item',
-            url: '/documentation/directives/fuse-if-on-dom'
+            url: '/documentation/directives/j-if-on-dom'
           },
           {
-            id: 'fuse-inner-scroll',
-            title: 'fuseInnerScroll',
+            id: 'j-inner-scroll',
+            title: 'jInnerScroll',
             type: 'item',
-            url: '/documentation/directives/fuse-inner-scroll'
+            url: '/documentation/directives/j-inner-scroll'
           },
           {
-            id: 'fuse-mat-sidenav',
-            title: 'fuseMatSidenav',
+            id: 'j-mat-sidenav',
+            title: 'jMatSidenav',
             type: 'item',
-            url: '/documentation/directives/fuse-mat-sidenav'
+            url: '/documentation/directives/j-mat-sidenav'
           },
           {
-            id: 'fuse-perfect-scrollbar',
-            title: 'fusePerfectScrollbar',
+            id: 'j-perfect-scrollbar',
+            title: 'jPerfectScrollbar',
             type: 'item',
-            url: '/documentation/directives/fuse-perfect-scrollbar'
+            url: '/documentation/directives/j-perfect-scrollbar'
           }
         ]
       },
@@ -1078,16 +1078,16 @@ export const fakeNavItems: JNavItem[] = [
         icon: 'import_contacts',
         children: [
           {
-            id: 'fuse-config',
-            title: 'Fuse Config',
+            id: 'j-config',
+            title: 'ngx-joy Config',
             type: 'item',
-            url: '/documentation/services/fuse-config'
+            url: '/documentation/services/j-config'
           },
           {
-            id: 'fuse-splash-screen',
-            title: 'Fuse Splash Screen',
+            id: 'j-splash-screen',
+            title: 'ngx-joy Splash Screen',
             type: 'item',
-            url: '/documentation/services/fuse-splash-screen'
+            url: '/documentation/services/j-splash-screen'
           }
         ]
       }
