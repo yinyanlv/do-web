@@ -11,5 +11,5 @@ import {JSidebarComponent} from './sidebar.component';
     JSidebarComponent
   ]
 })
-export class SidebarModule {
+export class JSidebarModule {
 }
