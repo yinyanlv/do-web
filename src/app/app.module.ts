@@ -3,6 +3,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
 import {appRouting} from './app.routing';
 import {AppComponent} from './app.component';
+import {NgxJoyModule} from '../ngx-joy/ngx-joy.module';
+import {jConfig} from './ngx-joy.config';
 import {LayoutsModule} from './layouts/layouts.module';
 
 @NgModule({
@@ -12,6 +14,7 @@ import {LayoutsModule} from './layouts/layouts.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    NgxJoyModule.forRoot(jConfig),
     appRouting,
     LayoutsModule
   ],
