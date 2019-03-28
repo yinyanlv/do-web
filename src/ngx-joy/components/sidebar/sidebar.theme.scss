@@ -1,0 +1,16 @@
+@mixin j-sidebar-theme($theme) {
+
+  $background: map-get($theme, background);
+
+  j-sidebar {
+    background: map-get($background, background);
+  }
+
+  .j-sidebar-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+
+    &.j-sidebar-overlay-invisible {
+      background-color: transparent;
+    }
+  }
+}
