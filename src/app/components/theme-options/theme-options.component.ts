@@ -123,7 +123,7 @@ export class ThemeOptionsComponent implements OnInit, OnDestroy {
 
   private _resetFormValues(value): void {
     switch (value) {
-      case 'vertical-default': {
+      case 'vertical-layout-default': {
         this.form.patchValue({
           layout: {
             width: 'fullwidth',
@@ -157,7 +157,7 @@ export class ThemeOptionsComponent implements OnInit, OnDestroy {
         break;
       }
 
-      case 'vertical-nav-unsplit': {
+      case 'vertical-layout-nav-unsplit': {
         this.form.patchValue({
           layout: {
             width: 'fullwidth',
@@ -191,7 +191,7 @@ export class ThemeOptionsComponent implements OnInit, OnDestroy {
         break;
       }
 
-      case 'vertical-gap': {
+      case 'vertical-layout-gap': {
         this.form.patchValue({
           layout: {
             width: 'fullwidth',
@@ -225,7 +225,7 @@ export class ThemeOptionsComponent implements OnInit, OnDestroy {
         break;
       }
 
-      case 'horizontal-default': {
+      case 'horizontal-layout-default': {
         this.form.patchValue({
           layout: {
             width: 'fullwidth',

@@ -4,7 +4,7 @@ export const jConfig: JConfig = {
   colorTheme: 'theme-default',
   customScrollbars: true,
   layout: {
-    style: 'vertical-default',
+    style: 'vertical-layout-default',
     width: 'fullwidth',
     navbar: {
       primaryBackground: 'j-navy-700',

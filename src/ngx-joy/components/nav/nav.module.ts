@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {MatIconModule} from '@angular/material';
+import {TranslateModule} from '@ngx-translate/core';
 import {JNavComponent} from './nav.component';
 import {JNavHorizontalItemComponent} from './horizontal/item/item.component';
 import {JNavHorizontalCollapsibleComponent} from './horizontal/collapsible/collapsible.component';
@@ -22,7 +23,8 @@ const components = [
   imports: [
     CommonModule,
     RouterModule,
-    MatIconModule
+    MatIconModule,
+    TranslateModule.forChild()
   ],
   declarations: [
     ...components

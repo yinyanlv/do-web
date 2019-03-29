@@ -1,32 +1,21 @@
-<!-- PROGRESS BAR -->
 <j-progress-bar></j-progress-bar>
-<!-- / PROGRESS BAR -->
 
-<!-- VERTICAL LAYOUT 1 -->
 <ng-container *ngIf="jConfig.layout.style === 'vertical-layout-default'">
   <vertical-layout-default></vertical-layout-default>
 </ng-container>
-<!-- / VERTICAL LAYOUT 1 -->
 
-<!-- VERTICAL LAYOUT 2 -->
 <ng-container *ngIf="jConfig.layout.style === 'vertical-layout-nav-unsplit'">
   <vertical-layout-nav-unsplit></vertical-layout-nav-unsplit>
 </ng-container>
-<!-- / VERTICAL LAYOUT 2 -->
 
-<!-- VERTICAL LAYOUT 3 -->
 <ng-container *ngIf="jConfig.layout.style === 'vertical-layout-gap'">
   <vertical-layout-gap></vertical-layout-gap>
 </ng-container>
-<!-- / VERTICAL LAYOUT 3 -->
 
-<!-- HORIZONTAL LAYOUT 1 -->
 <ng-container *ngIf="jConfig.layout.style === 'horizontal-layout-default'">
   <horizontal-layout-default></horizontal-layout-default>
 </ng-container>
-<!-- / HORIZONTAL LAYOUT 1 -->
 
-<!-- THEME OPTIONS PANEL -->
 <button mat-icon-button class="warn mat-elevation-z2 theme-options-button"
         [ngClass]="{'right-side-panel': jConfig.layout.sidepanel.position === 'right',
                     'side-panel-hidden': jConfig.layout.sidepanel.hidden === true}"
@@ -37,4 +26,3 @@
 <j-sidebar name="themeOptionsPanel" class="theme-options-sidebar" position="right" [invisibleOverlay]="true">
   <theme-options></theme-options>
 </j-sidebar>
-<!-- / THEME OPTIONS PANEL -->

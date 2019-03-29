@@ -20,15 +20,10 @@ export class JNavService {
   private _currentNavKey: string;
   private _registry: { [key: string]: any } = {};
 
-  /**
-   * Constructor
-   */
   constructor() {
-    // Set the defaults
     this.onItemCollapsed = new Subject();
     this.onItemCollapseToggled = new Subject();
 
-    // Set the private defaults
     this._currentNavKey = null;
     this._onNavChanged = new BehaviorSubject(null);
     this._onNavRegistered = new BehaviorSubject(null);

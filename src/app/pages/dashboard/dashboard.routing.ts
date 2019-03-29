@@ -7,4 +7,4 @@ const routes: Routes = [{
   component: DashboardComponent
 }];
 
-export const dashboardRouting: ModuleWithProviders = RouterModule.forChild(routes);
+export const dashboardRoutingModule: ModuleWithProviders = RouterModule.forChild(routes);
