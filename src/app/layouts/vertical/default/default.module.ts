@@ -1,17 +1,33 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {VerticalDefaultComponent} from './default.component';
+import {RouterModule} from '@angular/router';
+
+import {JSidebarModule} from '../../../../ngx-joy/components';
+import {JSharedModule} from '../../../../ngx-joy/shared.module';
 import {JContentModule} from '../../../../ngx-joy/components/content/content.module';
+import {FooterModule} from '../../../components/footer/footer.module';
+import {NavbarModule} from '../../../components/navbar/navbar.module';
+import {QuickPanelModule} from '../../../components/quick-panel/quick-panel.module';
+import {ToolbarModule} from '../../../components/toolbar/toolbar.module';
+
+import {VerticalLayoutDefaultComponent} from '../../../layouts/vertical/default/default.component';
 
 @NgModule({
-  declarations: [VerticalDefaultComponent],
+  declarations: [
+    VerticalLayoutDefaultComponent
+  ],
   imports: [
-    CommonModule,
-    JContentModule
+    RouterModule,
+    JSharedModule,
+    JSidebarModule,
+    JContentModule,
+    FooterModule,
+    NavbarModule,
+    QuickPanelModule,
+    ToolbarModule
   ],
   exports: [
-    VerticalDefaultComponent
+    VerticalLayoutDefaultComponent
   ]
 })
-export class VerticalDefaultModule {
+export class VerticalLayoutDefaultModule {
 }

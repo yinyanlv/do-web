@@ -1,0 +1,23 @@
+<div class="navbar-header" [ngClass]="jConfig.layout.navbar.secondaryBackground">
+
+    <div class="logo">
+        <img class="logo-icon" src="assets/images/logo.svg">
+        <span class="logo-text">DO WEB</span>
+    </div>
+
+    <button mat-icon-button class="toggle-sidebar-folded"
+            (click)="toggleSidebarFolded()" fxHide.lt-lg>
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <button mat-icon-button class="toggle-sidebar-opened"
+            (click)="toggleSidebarOpened()" fxHide.gt-md>
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+
+</div>
+
+<div class="navbar-content" jPerfectScrollbar [jPerfectScrollbarOptions]="{suppressScrollX: true}"
+     [ngClass]="jConfig.layout.navbar.primaryBackground">
+    <j-nav layout="vertical"></j-nav>
+</div>
