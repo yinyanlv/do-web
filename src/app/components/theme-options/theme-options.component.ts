@@ -123,7 +123,7 @@ export class ThemeOptionsComponent implements OnInit, OnDestroy {
 
   private _resetFormValues(value): void {
     switch (value) {
-      case 'vertical-layout-1': {
+      case 'vertical-default': {
         this.form.patchValue({
           layout: {
             width: 'fullwidth',
@@ -133,7 +133,7 @@ export class ThemeOptionsComponent implements OnInit, OnDestroy {
               folded: false,
               hidden: false,
               position: 'left',
-              variant: 'vertical-style-1'
+              variant: 'vertical-default'
             },
             toolbar: {
               background: 'j-white-500',
@@ -157,7 +157,7 @@ export class ThemeOptionsComponent implements OnInit, OnDestroy {
         break;
       }
 
-      case 'vertical-layout-2': {
+      case 'vertical-nav-unsplit': {
         this.form.patchValue({
           layout: {
             width: 'fullwidth',
@@ -167,7 +167,7 @@ export class ThemeOptionsComponent implements OnInit, OnDestroy {
               folded: false,
               hidden: false,
               position: 'left',
-              variant: 'vertical-style-1'
+              variant: 'vertical-default'
             },
             toolbar: {
               background: 'j-white-500',
@@ -191,7 +191,7 @@ export class ThemeOptionsComponent implements OnInit, OnDestroy {
         break;
       }
 
-      case 'vertical-layout-3': {
+      case 'vertical-gap': {
         this.form.patchValue({
           layout: {
             width: 'fullwidth',
@@ -201,7 +201,7 @@ export class ThemeOptionsComponent implements OnInit, OnDestroy {
               folded: false,
               hidden: false,
               position: 'left',
-              layout: 'vertical-style-1'
+              layout: 'vertical-default'
             },
             toolbar: {
               background: 'j-white-500',
@@ -225,7 +225,7 @@ export class ThemeOptionsComponent implements OnInit, OnDestroy {
         break;
       }
 
-      case 'horizontal-layout-1': {
+      case 'horizontal-default': {
         this.form.patchValue({
           layout: {
             width: 'fullwidth',
@@ -235,7 +235,7 @@ export class ThemeOptionsComponent implements OnInit, OnDestroy {
               folded: false,
               hidden: false,
               position: 'top',
-              variant: 'vertical-style-1'
+              variant: 'vertical-default'
             },
             toolbar: {
               background: 'j-white-500',

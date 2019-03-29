@@ -33,19 +33,19 @@
 
       <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="style">
 
-        <mat-radio-button class="mb-12" value="vertical-layout-1">
+        <mat-radio-button class="mb-12" value="vertical-default">
           Vertical Layout #1
         </mat-radio-button>
 
-        <mat-radio-button class="mb-12" value="vertical-layout-2">
+        <mat-radio-button class="mb-12" value="vertical-nav-unsplit">
           Vertical Layout #2
         </mat-radio-button>
 
-        <mat-radio-button class="mb-12" value="vertical-layout-3">
+        <mat-radio-button class="mb-12" value="vertical-gap">
           Vertical Layout #3
         </mat-radio-button>
 
-        <mat-radio-button class="mb-12" value="horizontal-layout-1">
+        <mat-radio-button class="mb-12" value="horizontal-default">
           Horizontal Layout #1
         </mat-radio-button>
 
@@ -55,7 +55,7 @@
       <ng-container [ngSwitch]="jConfig.layout.style">
 
         <!-- VERTICAL LAYOUT #1 -->
-        <ng-container *ngSwitchCase="'vertical-layout-1'">
+        <ng-container *ngSwitchCase="'vertical-default'">
 
           <!-- LAYOUT WIDTH -->
           <div class="group mt-32">
@@ -89,8 +89,8 @@
 
             <h3 class="mt-8">Variant:</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="variant">
-              <mat-radio-button class="mb-16" value="vertical-style-1">Style 1</mat-radio-button>
-              <mat-radio-button class="mb-16" value="vertical-style-2">Style 2</mat-radio-button>
+              <mat-radio-button class="mb-16" value="vertical-default">Style 1</mat-radio-button>
+              <mat-radio-button class="mb-16" value="vertical-pure">Style 2</mat-radio-button>
             </mat-radio-group>
 
             <h3 class="mt-16 mb-8">Primary background:</h3>
@@ -175,7 +175,7 @@
         </ng-container>
 
         <!-- VERTICAL LAYOUT #2 -->
-        <ng-container *ngSwitchCase="'vertical-layout-2'">
+        <ng-container *ngSwitchCase="'vertical-nav-unsplit'">
 
           <!-- LAYOUT WIDTH -->
           <div class="group mt-32">
@@ -209,8 +209,8 @@
 
             <h3 class="mt-8">Variant:</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="variant">
-              <mat-radio-button class="mb-16" value="vertical-style-1">Style 1</mat-radio-button>
-              <mat-radio-button class="mb-16" value="vertical-style-2">Style 2</mat-radio-button>
+              <mat-radio-button class="mb-16" value="vertical-default">Style 1</mat-radio-button>
+              <mat-radio-button class="mb-16" value="vertical-pure">Style 2</mat-radio-button>
             </mat-radio-group>
 
             <h3 class="mt-16 mb-8">Primary background:</h3>
@@ -295,7 +295,7 @@
         </ng-container>
 
         <!-- VERTICAL LAYOUT #3 -->
-        <ng-container *ngSwitchCase="'vertical-layout-3'">
+        <ng-container *ngSwitchCase="'vertical-gap'">
 
           <!-- LAYOUT WIDTH -->
           <div class="group mt-32">
@@ -329,8 +329,8 @@
 
             <h3 class="mt-8">Variant:</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="variant">
-              <mat-radio-button class="mb-16" value="vertical-style-1">Style 1</mat-radio-button>
-              <mat-radio-button class="mb-16" value="vertical-style-2">Style 2</mat-radio-button>
+              <mat-radio-button class="mb-16" value="vertical-default">Style 1</mat-radio-button>
+              <mat-radio-button class="mb-16" value="vertical-pure">Style 2</mat-radio-button>
             </mat-radio-group>
 
             <h3 class="mt-16 mb-8">Primary background:</h3>
@@ -413,7 +413,7 @@
         </ng-container>
 
         <!-- HORIZONTAL LAYOUT #1 -->
-        <ng-container *ngSwitchCase="'horizontal-layout-1'">
+        <ng-container *ngSwitchCase="'horizontal-default'">
 
           <!-- LAYOUT WIDTH -->
           <div class="group mt-32">
@@ -442,8 +442,8 @@
 
             <h3 class="mt-8">Variant (Vertical):</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="variant">
-              <mat-radio-button class="mb-16" value="vertical-style-1">Style 1</mat-radio-button>
-              <mat-radio-button class="mb-16" value="vertical-style-2">Style 2</mat-radio-button>
+              <mat-radio-button class="mb-16" value="vertical-default">Style 1</mat-radio-button>
+              <mat-radio-button class="mb-16" value="vertical-pure">Style 2</mat-radio-button>
             </mat-radio-group>
 
             <h3 class="mt-16 mb-8">Primary background:</h3>
