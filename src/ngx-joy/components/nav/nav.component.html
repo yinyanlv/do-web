@@ -2,7 +2,7 @@
 
   <!-- vertical layout -->
   <ng-container *ngIf="isVerticalLayout()">
-    <ng-container *ngFor="let item of items;">
+    <ng-container *ngFor="let item of nav;">
       <ng-container [ngSwitch]="item.type">
         <j-nav-vertical-group *ngSwitchCase="'group'" [item]="item"></j-nav-vertical-group>
         <j-nav-vertical-collapsible *ngSwitchCase="'collapsible'" [item]="item"></j-nav-vertical-collapsible>
@@ -13,7 +13,7 @@
 
   <!-- horizontal layout -->
   <ng-container *ngIf="!isVerticalLayout()">
-    <ng-container *ngFor="let item of items;">
+    <ng-container *ngFor="let item of nav;">
       <ng-container [ngSwitch]="item.type">
         <j-nav-horizontal-collapsible *ngSwitchCase="'group'" [item]="item"></j-nav-horizontal-collapsible>
         <j-nav-horizontal-collapsible *ngSwitchCase="'collapsible'" [item]="item"></j-nav-horizontal-collapsible>

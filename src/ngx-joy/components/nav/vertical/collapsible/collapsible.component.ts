@@ -4,11 +4,13 @@ import {merge, Subject} from 'rxjs';
 import {filter, takeUntil} from 'rxjs/operators';
 import {JNavItem} from '../../nav.component';
 import {JNavService} from '../../nav.service';
+import {jCollapsibleShowHideAnimation} from '../../../../animations/collapsible-show-hide';
 
 @Component({
   selector: 'j-nav-vertical-collapsible',
   templateUrl: './collapsible.component.html',
-  styleUrls: ['./collapsible.component.scss']
+  styleUrls: ['./collapsible.component.scss'],
+  animations: [jCollapsibleShowHideAnimation]
 })
 export class JNavVerticalCollapsibleComponent implements OnInit, OnDestroy {
   @Input()

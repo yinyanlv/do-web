@@ -97,7 +97,7 @@ export class JNavService {
         continue;
       }
 
-      if (item.type === 'collapsable' || item.type === 'group') {
+      if (item.type === 'collapsible' || item.type === 'group') {
         if (item.children) {
           this.getFlatNav(item.children, flatNav);
         }
