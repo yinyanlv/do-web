@@ -1,16 +1,22 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-
 import {VerticalLayoutDefaultModule} from './vertical/default/default.module';
+import {VerticalLayoutNavUnsplitModule} from './vertical/nav-unsplit/nav-unsplit.module';
+import {VerticalLayoutGapModule} from './vertical/gap/gap.module';
+import {HorizontalLayoutDefaultModule} from './horizontal/default/default.module';
+
+const modules = [
+  VerticalLayoutDefaultModule,
+  VerticalLayoutNavUnsplitModule,
+  VerticalLayoutGapModule,
+  HorizontalLayoutDefaultModule
+];
 
 @NgModule({
-  declarations: [],
   imports: [
-    CommonModule,
-    VerticalLayoutDefaultModule
+    ...modules
   ],
   exports: [
-    VerticalLayoutDefaultModule
+    ...modules
   ]
 })
 export class LayoutsModule {

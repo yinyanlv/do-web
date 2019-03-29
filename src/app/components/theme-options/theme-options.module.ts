@@ -44,5 +44,5 @@ import {ThemeOptionsComponent} from './theme-options.component';
     ThemeOptionsComponent
   ]
 })
-export class FuseThemeOptionsModule {
+export class ThemeOptionsModule {
 }
