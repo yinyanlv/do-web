@@ -896,7 +896,7 @@ export const fakeNavItems: JNavItem[] = [
       },
       {
         id: 'working-with-j',
-        title: 'Working with ngx-joy',
+        title: 'Working with J',
         type: 'collapsible',
         icon: 'import_contacts',
         children: [
@@ -920,7 +920,7 @@ export const fakeNavItems: JNavItem[] = [
           },
           {
             id: 'updating-j',
-            title: 'Updating ngx-joy',
+            title: 'Updating J',
             type: 'item',
             url: '/documentation/working-with-j/updating-j'
           },
@@ -1079,13 +1079,13 @@ export const fakeNavItems: JNavItem[] = [
         children: [
           {
             id: 'j-config',
-            title: 'ngx-joy Config',
+            title: 'J Config',
             type: 'item',
             url: '/documentation/services/j-config'
           },
           {
             id: 'j-splash-screen',
-            title: 'ngx-joy Splash Screen',
+            title: 'J Splash Screen',
             type: 'item',
             url: '/documentation/services/j-splash-screen'
           }

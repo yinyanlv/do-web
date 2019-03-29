@@ -73,6 +73,9 @@
     "directive-class-suffix": true,
     "variable-name": [
       "allow-leading-underscore"
+    ],
+    "object-literal-key-quotes": [
+      "consistent"
     ]
   }
 }
