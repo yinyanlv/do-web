@@ -1,4 +1,4 @@
-import {JConfig} from '../ngx-joy/types/config';
+import {JConfig} from 'src/ngx-joy/types/config';
 
 export const jConfig: JConfig = {
   colorTheme: 'theme-default',

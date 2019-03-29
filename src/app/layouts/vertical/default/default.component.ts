@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import {JConfigService} from '../../../../ngx-joy/services/config.service';
-import {fakeNavItems} from '../../../../fake-db/nav';
+import {JConfigService} from 'src/ngx-joy/services/config.service';
+import {fakeNavItems} from 'src/fake-db/nav';
 
 @Component({
   selector: 'vertical-layout-default',

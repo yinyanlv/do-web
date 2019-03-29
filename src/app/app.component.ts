@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import {fakeNavItems} from '../fake-db/nav';
+import {fakeNavItems} from 'src/fake-db/nav';
 
 @Component({
   selector: 'app-root',

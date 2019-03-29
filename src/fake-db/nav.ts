@@ -1,4 +1,4 @@
-import {JNavItem} from '../ngx-joy/components/nav/nav.component';
+import {JNavItem} from 'src/ngx-joy/components/nav/nav.component';
 
 export const fakeNavItems: JNavItem[] = [
   {

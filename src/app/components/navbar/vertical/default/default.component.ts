@@ -3,10 +3,10 @@ import {NavigationEnd, Router} from '@angular/router';
 import {Subject} from 'rxjs';
 import {delay, filter, take, takeUntil} from 'rxjs/operators';
 
-import {JConfigService} from '../../../../../ngx-joy/services/config.service';
-import {JNavService} from '../../../../../ngx-joy/components/nav/nav.service';
-import {JSidebarService} from '../../../../../ngx-joy/components/sidebar/sidebar.service';
-import {JPerfectScrollbarDirective} from '../../../../../ngx-joy/directives/perfect-scrollbar.directive';
+import {JConfigService} from 'src/ngx-joy/services/config.service';
+import {JNavService} from 'src/ngx-joy/components/nav/nav.service';
+import {JSidebarService} from 'src/ngx-joy/components/sidebar/sidebar.service';
+import {JPerfectScrollbarDirective} from 'src/ngx-joy/directives/perfect-scrollbar.directive';
 
 @Component({
   selector: 'navbar-vertical-default',

@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 
-import {JSidebarModule} from '../../../../ngx-joy/components';
-import {JSharedModule} from '../../../../ngx-joy/shared.module';
-import {JContentModule} from '../../../../ngx-joy/components/content/content.module';
+import {JSidebarModule} from 'src/ngx-joy/components';
+import {JSharedModule} from 'src/ngx-joy/shared.module';
+import {JContentModule} from 'src/ngx-joy/components/content/content.module';
 import {FooterModule} from '../../../components/footer/footer.module';
 import {NavbarModule} from '../../../components/navbar/navbar.module';
 import {QuickPanelModule} from '../../../components/quick-panel/quick-panel.module';

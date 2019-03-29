@@ -13,9 +13,9 @@ import {
   MatSelectModule,
   MatSlideToggleModule
 } from '@angular/material';
-import {JDirectivesModule} from '../../../ngx-joy/directives/directives.module';
-import {JMaterialColorPickerModule} from '../../../ngx-joy/components/material-color-picker/material-color-picker.module';
-import {JSidebarModule} from '../../../ngx-joy/components/sidebar/sidebar.module';
+import {JDirectivesModule} from 'src/ngx-joy/directives/directives.module';
+import {JMaterialColorPickerModule} from 'src/ngx-joy/components/material-color-picker/material-color-picker.module';
+import {JSidebarModule} from 'src/ngx-joy/components/sidebar/sidebar.module';
 import {ThemeOptionsComponent} from './theme-options.component';
 
 @NgModule({

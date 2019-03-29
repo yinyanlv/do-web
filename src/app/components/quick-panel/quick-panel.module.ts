@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {MatDividerModule, MatListModule, MatSlideToggleModule} from '@angular/material';
-import {JSharedModule} from '../../../ngx-joy/shared.module';
+import {JSharedModule} from 'src/ngx-joy/shared.module';
 import {QuickPanelComponent} from './quick-panel.component';
 
 @NgModule({
