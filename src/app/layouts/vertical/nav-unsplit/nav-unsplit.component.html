@@ -67,20 +67,6 @@
 
 </div>
 
-<!-- SIDE PANEL -->
-<ng-container *ngIf="!jConfig.layout.sidepanel.hidden && jConfig.layout.sidepanel.position === 'right'">
-
-    <!-- CHAT PANEL -->
-    <j-sidebar name="chatPanel" position="right" class="chat-panel right-chat-panel"
-                  [folded]="true" [foldedWidth]="70" [foldedAutoTriggerOnHover]="false"
-                  lockedOpen="gt-md">
-        <chat-panel></chat-panel>
-    </j-sidebar>
-    <!-- / CHAT PANEL -->
-
-</ng-container>
-<!-- / SIDE PANEL -->
-
 <!-- QUICK PANEL -->
 <j-sidebar name="quickPanel" position="right" class="quick-panel">
     <quick-panel></quick-panel>
@@ -125,6 +111,6 @@
                   lockedOpen="gt-md"
                   *ngIf="!jConfig.layout.navbar.hidden">
         <navbar [variant]="jConfig.layout.navbar.variant" class="right-navbar"></navbar>
-    </fuse-sidebar>
+    </j-sidebar>
 </ng-template>
 <!-- / RIGHT NAVBAR -->

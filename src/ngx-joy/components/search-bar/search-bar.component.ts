@@ -11,7 +11,7 @@ import {JConfigService} from '../../services/config.service';
 })
 export class JSearchBarComponent implements OnInit, OnDestroy {
   collapsed: boolean;
-  fuseConfig: any;
+  jConfig: any;
 
   @Output()
   input: EventEmitter<any>;
@@ -32,7 +32,7 @@ export class JSearchBarComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this._unsubscribeAll))
       .subscribe(
         (config) => {
-          this.fuseConfig = config;
+          this.jConfig = config;
         }
       );
   }

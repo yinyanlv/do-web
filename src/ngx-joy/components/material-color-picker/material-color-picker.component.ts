@@ -51,7 +51,7 @@ export class JMaterialColorPickerComponent implements ControlValueAccessor {
       return;
     }
 
-    // split the color value (red-400, blue-500, fuse-navy-700 etc.)
+    // split the color value (red-400, blue-500, j-navy-700 etc.)
     const colorParts = value.split('-');
 
     this.selectedHue = colorParts[colorParts.length - 1];

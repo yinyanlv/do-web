@@ -6,6 +6,6 @@ const routes: Routes = [{
   loadChildren: './pages/dashboard/dashboard.module#DashboardModule'
 }];
 
-export const appRouting: ModuleWithProviders = RouterModule.forRoot(routes, {
+export const appRoutingModule: ModuleWithProviders = RouterModule.forRoot(routes, {
   useHash: false
 });

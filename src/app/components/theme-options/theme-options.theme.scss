@@ -1,9 +1,9 @@
-@mixin j-theme-options-theme($theme) {
+@mixin theme-options-theme($theme) {
 
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
-  j-theme-options {
+  theme-options {
 
     .theme-options-panel {
 
