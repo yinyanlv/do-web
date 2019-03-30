@@ -11,7 +11,7 @@ import {JSidebarService} from 'src/ngx-joy/components/sidebar/sidebar.service';
 import {JSplashScreenService} from 'src/ngx-joy/services/splash-screen.service';
 import {JTranslationLoaderService} from 'src/ngx-joy/services/translation-loader.service';
 
-import {fakeNavItems} from 'src/fake-db/nav';
+import {navItems} from './data/nav';
 import {locale as localeZh} from './i18n/zh';
 import {locale as localeEn} from './i18n/en';
 
@@ -36,7 +36,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private _translateService: TranslateService,
     private _platform: Platform
   ) {
-    this.nav = fakeNavItems;
+    this.nav = navItems;
 
     this._jNavService.register('main', this.nav);
 

@@ -1,6 +1,6 @@
 import {JNavItem} from 'src/ngx-joy/components/nav/nav.component';
 
-export const fakeNavItems: JNavItem[] = [
+export const navItems: JNavItem[] = [
   {
     id: 'applications',
     title: 'Applications',

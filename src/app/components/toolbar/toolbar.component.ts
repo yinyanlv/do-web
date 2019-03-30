@@ -5,7 +5,7 @@ import {TranslateService} from '@ngx-translate/core';
 import * as _ from 'lodash';
 import {JConfigService} from 'src/ngx-joy/services/config.service';
 import {JSidebarService} from 'src/ngx-joy/components/sidebar/sidebar.service';
-import {fakeNavItems} from 'src/fake-db/nav';
+import {navItems} from '../../data/nav';
 
 @Component({
   selector: 'toolbar',
@@ -71,7 +71,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
       }
     ];
 
-    this.nav = fakeNavItems;
+    this.nav = navItems;
 
     this._unsubscribeAll = new Subject();
   }
