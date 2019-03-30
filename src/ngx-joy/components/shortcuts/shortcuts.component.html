@@ -82,23 +82,23 @@
 
       <mat-nav-list *ngIf="searching" style="max-height: 312px; overflow: auto" jPerfectScrollbar>
 
-        <mat-list-item *ngFor="let navigationItem of filteredNavigationItems"
-                       (click)="toggleShortcut($event, navigationItem)">
+        <mat-list-item *ngFor="let navItem of filteredNavItems"
+                       (click)="toggleShortcut($event, navItem)">
 
           <div class="w-100-p" fxLayout="row" fxLayoutAlign="start center">
 
-            <mat-icon mat-list-icon class="mr-8 secondary-text" *ngIf="navigationItem.icon">
-              {{navigationItem.icon}}
+            <mat-icon mat-list-icon class="mr-8 secondary-text" *ngIf="navItem.icon">
+              {{navItem.icon}}
             </mat-icon>
 
             <span class="h2 w-32 h-32 p-4 mr-8 secondary-text text-bold" fxLayout="row"
-                  fxLayoutAlign="center center" *ngIf="!navigationItem.icon">
-                            {{navigationItem.title.substr(0, 1).toUpperCase()}}
+                  fxLayoutAlign="center center" *ngIf="!navItem.icon">
+                            {{navItem.title.substr(0, 1).toUpperCase()}}
                         </span>
 
-            <p matLine fxFlex>{{navigationItem.title}}</p>
+            <p matLine fxFlex>{{navItem.title}}</p>
 
-            <mat-icon class="ml-8 amber-fg" *ngIf="isInShortcuts(navigationItem)">star</mat-icon>
+            <mat-icon class="ml-8 amber-fg" *ngIf="isInShortcuts(navItem)">star</mat-icon>
 
           </div>
 
