@@ -9,7 +9,7 @@ import 'hammerjs';
 import {NgxJoyModule} from 'src/ngx-joy/ngx-joy.module';
 import {JSharedModule} from 'src/ngx-joy/shared.module';
 import {JProgressBarModule, JSidebarModule} from 'src/ngx-joy/components';
-import {jConfig} from './ngx-joy.config';
+import {jConfig} from './config/ngx-joy.config';
 import {FakeDbService} from './services/fake-db.service';
 import {AppComponent} from './app.component';
 import {ThemeOptionsModule} from './components/theme-options/theme-options.module';

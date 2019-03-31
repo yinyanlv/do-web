@@ -62,10 +62,6 @@ export class ThemeOptionsComponent implements OnInit, OnDestroy {
           customBackgroundColor: new FormControl(),
           hidden: new FormControl(),
           position: new FormControl()
-        }),
-        sidepanel: this._formBuilder.group({
-          hidden: new FormControl(),
-          position: new FormControl()
         })
       })
     });
@@ -146,10 +142,6 @@ export class ThemeOptionsComponent implements OnInit, OnDestroy {
               customBackgroundColor: true,
               hidden: false,
               position: 'below-static'
-            },
-            sidepanel: {
-              hidden: false,
-              position: 'right'
             }
           }
         });
@@ -180,10 +172,6 @@ export class ThemeOptionsComponent implements OnInit, OnDestroy {
               customBackgroundColor: true,
               hidden: false,
               position: 'below'
-            },
-            sidepanel: {
-              hidden: false,
-              position: 'right'
             }
           }
         });
@@ -214,10 +202,6 @@ export class ThemeOptionsComponent implements OnInit, OnDestroy {
               customBackgroundColor: true,
               hidden: false,
               position: 'above-static'
-            },
-            sidepanel: {
-              hidden: false,
-              position: 'right'
             }
           }
         });
@@ -248,10 +232,6 @@ export class ThemeOptionsComponent implements OnInit, OnDestroy {
               customBackgroundColor: true,
               hidden: false,
               position: 'above-fixed'
-            },
-            sidepanel: {
-              hidden: false,
-              position: 'right'
             }
           }
         });

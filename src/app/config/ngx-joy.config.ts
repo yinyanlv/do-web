@@ -18,17 +18,13 @@ export const jConfig: JConfig = {
       customBackgroundColor: false,
       background: 'j-white-500',
       hidden: false,
-      position: 'below-static'
+      position: 'below-fixed'
     },
     footer: {
       customBackgroundColor: true,
       background: 'j-navy-900',
       hidden: false,
-      position: 'below-fixed'
-    },
-    sidepanel: {
-      hidden: false,
-      position: 'right'
+      position: 'below-static'
     }
   }
 };

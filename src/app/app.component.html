@@ -17,8 +17,6 @@
 </ng-container>
 
 <button mat-icon-button class="warn mat-elevation-z2 theme-options-button"
-        [ngClass]="{'right-side-panel': jConfig.layout.sidepanel.position === 'right',
-                    'side-panel-hidden': jConfig.layout.sidepanel.hidden === true}"
         (click)="toggleSidebarOpen('themeOptionsPanel')">
   <mat-icon>settings</mat-icon>
 </button>

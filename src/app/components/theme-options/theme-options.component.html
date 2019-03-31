@@ -2,7 +2,7 @@
 
   <div class="header">
 
-    <span class="title">Theme Options</span>
+    <span class="title">主题设置</span>
 
     <button mat-icon-button class="close-button" (click)="toggleSidebarOpen('themeOptionsPanel')">
       <mat-icon>close</mat-icon>
@@ -12,536 +12,393 @@
 
   <form [formGroup]="form">
 
-    <!-- COLOR THEME -->
+    <!-- 主题颜色 -->
     <div class="group">
 
-      <h2>Color themes</h2>
+      <h2>主题颜色</h2>
 
       <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="colorTheme">
-        <mat-radio-button class="mb-12" value="theme-default">Default Light</mat-radio-button>
-        <mat-radio-button class="mb-12" value="theme-yellow-light">Yellow Light</mat-radio-button>
-        <mat-radio-button class="mb-12" value="theme-blue-gray-dark">Blue-Gray Dark</mat-radio-button>
-        <mat-radio-button class="mb-12" value="theme-pink-dark">Pink Dark</mat-radio-button>
+        <mat-radio-button class="mb-12" value="theme-default">浅蓝色</mat-radio-button>
+        <mat-radio-button class="mb-12" value="theme-yellow-light">浅黄色</mat-radio-button>
+        <mat-radio-button class="mb-12" value="theme-blue-gray-dark">深蓝灰色</mat-radio-button>
+        <mat-radio-button class="mb-12" value="theme-pink-dark">深粉色</mat-radio-button>
       </mat-radio-group>
 
     </div>
 
-    <!-- LAYOUT STYLES -->
+    <!-- 页面布局模式 -->
     <div class="group" formGroupName="layout">
 
-      <h2>Layout Styles</h2>
-
+      <h2>页面布局</h2>
       <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="style">
 
         <mat-radio-button class="mb-12" value="vertical-layout-default">
-          Vertical Layout #1
+          垂直布局导航分离
         </mat-radio-button>
 
         <mat-radio-button class="mb-12" value="vertical-layout-nav-unsplit">
-          Vertical Layout #2
+          垂直布局导航不分离
         </mat-radio-button>
 
         <mat-radio-button class="mb-12" value="vertical-layout-gap">
-          Vertical Layout #3
+          垂直布局各布局组件有间距
         </mat-radio-button>
 
         <mat-radio-button class="mb-12" value="horizontal-layout-default">
-          Horizontal Layout #1
+          水平布局
         </mat-radio-button>
 
       </mat-radio-group>
 
-      <!-- DIFFERENT FORMS BASED ON LAYOUT STYLES -->
+      <!-- 基于页面布局模式的各组件布局 -->
       <ng-container [ngSwitch]="jConfig.layout.style">
 
-        <!-- VERTICAL LAYOUT #1 -->
+        <!-- 垂直布局导航分离 -->
         <ng-container *ngSwitchCase="'vertical-layout-default'">
 
-          <!-- LAYOUT WIDTH -->
           <div class="group mt-32">
 
-            <h2>Layout Width</h2>
+            <h2>页面宽度</h2>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="width">
-              <mat-radio-button class="mb-12" value="fullwidth">Fullwidth</mat-radio-button>
-              <mat-radio-button class="mb-12" value="boxed">Boxed</mat-radio-button>
+              <mat-radio-button class="mb-12" value="fullwidth">全屏</mat-radio-button>
+              <mat-radio-button class="mb-12" value="boxed">固定宽度</mat-radio-button>
             </mat-radio-group>
 
           </div>
 
-          <!-- NAVBAR -->
+          <!-- 导航 -->
           <div class="group" formGroupName="navbar">
 
-            <h2>Navbar</h2>
+            <h2>导航</h2>
+            <mat-slide-toggle formControlName="hidden">隐藏</mat-slide-toggle>
+            <mat-slide-toggle class="mt-24" formControlName="folded">折叠</mat-slide-toggle>
 
-            <mat-slide-toggle formControlName="hidden">
-              Hide
-            </mat-slide-toggle>
-
-            <mat-slide-toggle class="mt-24" formControlName="folded">
-              Folded
-            </mat-slide-toggle>
-
-            <h3 class="mt-24">Position:</h3>
+            <h3 class="mt-24">位置：</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-              <mat-radio-button class="mb-16" value="left">Left</mat-radio-button>
-              <mat-radio-button class="mb-16" value="right">Right</mat-radio-button>
+              <mat-radio-button class="mb-16" value="left">左侧</mat-radio-button>
+              <mat-radio-button class="mb-16" value="right">右侧</mat-radio-button>
             </mat-radio-group>
 
-            <h3 class="mt-8">Variant:</h3>
+            <h3 class="mt-8">导航：</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="variant">
-              <mat-radio-button class="mb-16" value="vertical-default">Style 1</mat-radio-button>
-              <mat-radio-button class="mb-16" value="vertical-pure">Style 2</mat-radio-button>
+              <mat-radio-button class="mb-16" value="vertical-default">显示用户信息</mat-radio-button>
+              <mat-radio-button class="mb-16" value="vertical-pure">不显示用户信息</mat-radio-button>
             </mat-radio-group>
 
-            <h3 class="mt-16 mb-8">Primary background:</h3>
+            <h3 class="mt-16 mb-8">主背景色：</h3>
             <j-material-color-picker class="mb-16"
-                                        formControlName="primaryBackground"></j-material-color-picker>
+                                     formControlName="primaryBackground"></j-material-color-picker>
 
-            <h3 class="mt-16 mb-8">Secondary background:</h3>
+            <h3 class="mt-16 mb-8">次背景色：</h3>
             <j-material-color-picker class="mb-16"
-                                        formControlName="secondaryBackground"></j-material-color-picker>
+                                     formControlName="secondaryBackground"></j-material-color-picker>
 
           </div>
 
-          <!-- TOOLBAR -->
+          <!-- 顶部工具栏 -->
           <div class="group" formGroupName="toolbar">
 
-            <h2>Toolbar</h2>
+            <h2>顶部工具栏</h2>
+            <mat-slide-toggle formControlName="hidden">隐藏</mat-slide-toggle>
 
-            <mat-slide-toggle formControlName="hidden">
-              Hide
-            </mat-slide-toggle>
-
-            <h3 class="mt-24">Position:</h3>
+            <h3 class="mt-24">位置：</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-              <mat-radio-button class="mb-12" value="above">Above</mat-radio-button>
-              <mat-radio-button class="mb-12" value="below-static">Below Static</mat-radio-button>
-              <mat-radio-button class="mb-12" value="below-fixed">Below Fixed</mat-radio-button>
+              <mat-radio-button class="mb-12" value="above">上方</mat-radio-button>
+              <mat-radio-button class="mb-12" value="below-static">下方静态</mat-radio-button>
+              <mat-radio-button class="mb-12" value="below-fixed">下方固定</mat-radio-button>
             </mat-radio-group>
 
-            <mat-checkbox class="mt-24" formControlName="customBackgroundColor">
-              Use custom background color
-            </mat-checkbox>
+            <mat-checkbox class="mt-24" formControlName="customBackgroundColor">使用用户自定义背景色</mat-checkbox>
 
-            <h3 class="mt-24 mb-8">Background color:</h3>
+            <h3 class="mt-24 mb-8">背景色：</h3>
             <j-material-color-picker class="mb-16"
-                                        formControlName="background"></j-material-color-picker>
+                                     formControlName="background"></j-material-color-picker>
 
           </div>
 
-          <!-- FOOTER -->
+          <!-- 页面底部 -->
           <div class="group" formGroupName="footer">
 
-            <h2>Footer</h2>
+            <h2>页面底部</h2>
+            <mat-slide-toggle formControlName="hidden">隐藏</mat-slide-toggle>
 
-            <mat-slide-toggle formControlName="hidden">
-              Hide
-            </mat-slide-toggle>
-
-            <h3 class="mt-24">Position:</h3>
+            <h3 class="mt-24">位置：</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-              <mat-radio-button class="mb-12" value="above">Above</mat-radio-button>
-              <mat-radio-button class="mb-12" value="below-static">Below Static</mat-radio-button>
-              <mat-radio-button class="mb-12" value="below-fixed">Below Fixed</mat-radio-button>
+              <mat-radio-button class="mb-12" value="above">上方</mat-radio-button>
+              <mat-radio-button class="mb-12" value="below-static">下方静态</mat-radio-button>
+              <mat-radio-button class="mb-12" value="below-fixed">下方固定</mat-radio-button>
             </mat-radio-group>
 
-            <mat-checkbox class="mt-24" formControlName="customBackgroundColor">
-              Use custom background color
-            </mat-checkbox>
+            <mat-checkbox class="mt-24" formControlName="customBackgroundColor">使用用户自定义背景色</mat-checkbox>
 
-            <h3 class="mt-24 mb-8">Color:</h3>
+            <h3 class="mt-24 mb-8">背景色：</h3>
             <j-material-color-picker class="mb-16"
-                                        formControlName="background"></j-material-color-picker>
-
+                                     formControlName="background"></j-material-color-picker>
           </div>
-
-          <!-- SIDE PANEL -->
-          <div class="group" formGroupName="sidepanel">
-
-            <h2>Side Panel</h2>
-
-            <mat-slide-toggle formControlName="hidden">
-              Hide
-            </mat-slide-toggle>
-
-            <h3 class="mt-24">Position:</h3>
-            <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-              <mat-radio-button class="mb-12" value="left">Left</mat-radio-button>
-              <mat-radio-button class="mb-12" value="right">Right</mat-radio-button>
-            </mat-radio-group>
-
-          </div>
-
         </ng-container>
 
-        <!-- VERTICAL LAYOUT #2 -->
+        <!-- 垂直布局导航不分离 -->
         <ng-container *ngSwitchCase="'vertical-layout-nav-unsplit'">
 
-          <!-- LAYOUT WIDTH -->
           <div class="group mt-32">
 
-            <h2>Layout Width</h2>
+            <h2>页面宽度</h2>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="width">
-              <mat-radio-button class="mb-12" value="fullwidth">Fullwidth</mat-radio-button>
-              <mat-radio-button class="mb-12" value="boxed">Boxed</mat-radio-button>
+              <mat-radio-button class="mb-12" value="fullwidth">全屏</mat-radio-button>
+              <mat-radio-button class="mb-12" value="boxed">固定宽度</mat-radio-button>
             </mat-radio-group>
 
           </div>
 
-          <!-- NAVBAR -->
+          <!-- 导航 -->
           <div class="group" formGroupName="navbar">
 
-            <h2>Navbar</h2>
+            <h2>导航</h2>
+            <mat-slide-toggle formControlName="hidden">隐藏</mat-slide-toggle>
+            <mat-slide-toggle class="mt-24" formControlName="folded">折叠</mat-slide-toggle>
 
-            <mat-slide-toggle formControlName="hidden">
-              Hide
-            </mat-slide-toggle>
-
-            <mat-slide-toggle class="mt-24" formControlName="folded">
-              Folded
-            </mat-slide-toggle>
-
-            <h3 class="mt-24">Position:</h3>
+            <h3 class="mt-24">位置：</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-              <mat-radio-button class="mb-16" value="left">Left</mat-radio-button>
-              <mat-radio-button class="mb-16" value="right">Right</mat-radio-button>
+              <mat-radio-button class="mb-16" value="left">左侧</mat-radio-button>
+              <mat-radio-button class="mb-16" value="right">右侧</mat-radio-button>
             </mat-radio-group>
 
-            <h3 class="mt-8">Variant:</h3>
+            <h3 class="mt-8">导航：</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="variant">
-              <mat-radio-button class="mb-16" value="vertical-default">Style 1</mat-radio-button>
-              <mat-radio-button class="mb-16" value="vertical-pure">Style 2</mat-radio-button>
+              <mat-radio-button class="mb-16" value="vertical-default">显示用户信息</mat-radio-button>
+              <mat-radio-button class="mb-16" value="vertical-pure">不显示用户信息</mat-radio-button>
             </mat-radio-group>
 
-            <h3 class="mt-16 mb-8">Primary background:</h3>
+            <h3 class="mt-16 mb-8">主背景色：</h3>
             <j-material-color-picker class="mb-16"
-                                        formControlName="primaryBackground"></j-material-color-picker>
+                                     formControlName="primaryBackground"></j-material-color-picker>
 
-            <h3 class="mt-16 mb-8">Secondary background:</h3>
+            <h3 class="mt-16 mb-8">次背景色：</h3>
             <j-material-color-picker class="mb-16"
-                                        formControlName="secondaryBackground"></j-material-color-picker>
+                                     formControlName="secondaryBackground"></j-material-color-picker>
 
           </div>
 
-          <!-- TOOLBAR -->
+          <!-- 顶部工具栏 -->
           <div class="group" formGroupName="toolbar">
 
-            <h2>Toolbar</h2>
+            <h2>顶部工具栏</h2>
+            <mat-slide-toggle formControlName="hidden">隐藏</mat-slide-toggle>
 
-            <mat-slide-toggle formControlName="hidden">
-              Hide
-            </mat-slide-toggle>
-
-            <h3 class="mt-24">Position:</h3>
+            <h3 class="mt-24">位置：</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-              <mat-radio-button class="mb-12" value="above-static">Above Static</mat-radio-button>
-              <mat-radio-button class="mb-12" value="above-fixed">Above Fixed</mat-radio-button>
-              <mat-radio-button class="mb-12" value="below">Below</mat-radio-button>
+              <mat-radio-button class="mb-12" value="above-static">上方静态</mat-radio-button>
+              <mat-radio-button class="mb-12" value="above-fixed">上方固定</mat-radio-button>
+              <mat-radio-button class="mb-12" value="below">下方</mat-radio-button>
             </mat-radio-group>
 
-            <mat-checkbox class="mt-24" formControlName="customBackgroundColor">
-              Use custom background color
-            </mat-checkbox>
+            <mat-checkbox class="mt-24" formControlName="customBackgroundColor">使用用户自定义背景色</mat-checkbox>
 
-            <h3 class="mt-24 mb-8">Background color:</h3>
+            <h3 class="mt-24 mb-8">背景色：</h3>
             <j-material-color-picker class="mb-16"
-                                        formControlName="background"></j-material-color-picker>
+                                     formControlName="background"></j-material-color-picker>
 
           </div>
 
-          <!-- FOOTER -->
+          <!-- 页面底部 -->
           <div class="group" formGroupName="footer">
 
-            <h2>Footer</h2>
+            <h2>页面底部</h2>
+            <mat-slide-toggle formControlName="hidden">隐藏</mat-slide-toggle>
 
-            <mat-slide-toggle formControlName="hidden">
-              Hide
-            </mat-slide-toggle>
-
-            <h3 class="mt-24">Position:</h3>
+            <h3 class="mt-24">位置：</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-              <mat-radio-button class="mb-12" value="above-static">Above Static</mat-radio-button>
-              <mat-radio-button class="mb-12" value="above-fixed">Above Fixed</mat-radio-button>
-              <mat-radio-button class="mb-12" value="below">Below</mat-radio-button>
+              <mat-radio-button class="mb-12" value="above-static">上方静态</mat-radio-button>
+              <mat-radio-button class="mb-12" value="above-fixed">上方固定</mat-radio-button>
+              <mat-radio-button class="mb-12" value="below">下方</mat-radio-button>
             </mat-radio-group>
 
-            <mat-checkbox class="mt-24" formControlName="customBackgroundColor">
-              Use custom background color
-            </mat-checkbox>
+            <mat-checkbox class="mt-24" formControlName="customBackgroundColor">用户自定义背景色</mat-checkbox>
 
-            <h3 class="mt-24 mb-8">Background color:</h3>
+            <h3 class="mt-24 mb-8">背景色：</h3>
             <j-material-color-picker class="mb-16"
-                                        formControlName="background"></j-material-color-picker>
+                                     formControlName="background"></j-material-color-picker>
 
           </div>
-
-          <!-- SIDE PANEL -->
-          <div class="group" formGroupName="sidepanel">
-
-            <h2>Side Panel</h2>
-
-            <mat-slide-toggle formControlName="hidden">
-              Hide
-            </mat-slide-toggle>
-
-            <h3 class="mt-24">Position:</h3>
-            <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-              <mat-radio-button class="mb-12" value="left">Left</mat-radio-button>
-              <mat-radio-button class="mb-12" value="right">Right</mat-radio-button>
-            </mat-radio-group>
-
-          </div>
-
         </ng-container>
 
-        <!-- VERTICAL LAYOUT #3 -->
+        <!-- 垂直布局各布局组件有间距 -->
         <ng-container *ngSwitchCase="'vertical-layout-gap'">
 
-          <!-- LAYOUT WIDTH -->
+          <!-- 页面宽度-->
           <div class="group mt-32">
 
-            <h2>Layout Width</h2>
+            <h2>页面宽度</h2>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="width">
-              <mat-radio-button class="mb-12" value="fullwidth">Fullwidth</mat-radio-button>
-              <mat-radio-button class="mb-12" value="boxed">Boxed</mat-radio-button>
+              <mat-radio-button class="mb-12" value="fullwidth">全屏</mat-radio-button>
+              <mat-radio-button class="mb-12" value="boxed">固定宽度</mat-radio-button>
             </mat-radio-group>
 
           </div>
 
-          <!-- NAVBAR -->
+          <!-- 导航 -->
           <div class="group" formGroupName="navbar">
 
-            <h2>Navbar</h2>
+            <h2>导航</h2>
+            <mat-slide-toggle formControlName="hidden">隐藏</mat-slide-toggle>
+            <mat-slide-toggle class="mt-24" formControlName="folded">折叠</mat-slide-toggle>
 
-            <mat-slide-toggle formControlName="hidden">
-              Hide
-            </mat-slide-toggle>
-
-            <mat-slide-toggle class="mt-24" formControlName="folded">
-              Folded
-            </mat-slide-toggle>
-
-            <h3 class="mt-24">Position:</h3>
+            <h3 class="mt-24">位置：</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-              <mat-radio-button class="mb-16" value="left">Left</mat-radio-button>
-              <mat-radio-button class="mb-16" value="right">Right</mat-radio-button>
+              <mat-radio-button class="mb-16" value="left">左侧</mat-radio-button>
+              <mat-radio-button class="mb-16" value="right">右侧</mat-radio-button>
             </mat-radio-group>
 
-            <h3 class="mt-8">Variant:</h3>
+            <h3 class="mt-8">导航：</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="variant">
-              <mat-radio-button class="mb-16" value="vertical-default">Style 1</mat-radio-button>
-              <mat-radio-button class="mb-16" value="vertical-pure">Style 2</mat-radio-button>
+              <mat-radio-button class="mb-16" value="vertical-default">显示用户信息</mat-radio-button>
+              <mat-radio-button class="mb-16" value="vertical-pure">不显示用户信息</mat-radio-button>
             </mat-radio-group>
 
-            <h3 class="mt-16 mb-8">Primary background:</h3>
+            <h3 class="mt-16 mb-8">主背景色：</h3>
             <j-material-color-picker class="mb-16"
-                                        formControlName="primaryBackground"></j-material-color-picker>
+                                     formControlName="primaryBackground"></j-material-color-picker>
 
-            <h3 class="mt-16 mb-8">Secondary background:</h3>
+            <h3 class="mt-16 mb-8">次背景色：</h3>
             <j-material-color-picker class="mb-16"
-                                        formControlName="secondaryBackground"></j-material-color-picker>
+                                     formControlName="secondaryBackground"></j-material-color-picker>
 
           </div>
 
-          <!-- TOOLBAR -->
+          <!-- 顶部工具栏 -->
           <div class="group" formGroupName="toolbar">
 
-            <h2>Toolbar</h2>
+            <h2>顶部工具栏</h2>
 
-            <mat-slide-toggle formControlName="hidden">
-              Hide
-            </mat-slide-toggle>
+            <mat-slide-toggle formControlName="hidden">隐藏</mat-slide-toggle>
 
-            <h3 class="mt-24">Position:</h3>
+            <h3 class="mt-24">位置：</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-              <mat-radio-button class="mb-12" value="above-static">Above Static</mat-radio-button>
-              <mat-radio-button class="mb-12" value="above-fixed">Above Fixed</mat-radio-button>
+              <mat-radio-button class="mb-12" value="above-static">上方静态</mat-radio-button>
+              <mat-radio-button class="mb-12" value="above-fixed">上方固定</mat-radio-button>
             </mat-radio-group>
 
-            <mat-checkbox class="mt-24" formControlName="customBackgroundColor">
-              Use custom background color
-            </mat-checkbox>
+            <mat-checkbox class="mt-24" formControlName="customBackgroundColor">使用用户自定义背景色</mat-checkbox>
 
-            <h3 class="mt-24 mb-8">Background color:</h3>
+            <h3 class="mt-24 mb-8">背景色：</h3>
             <j-material-color-picker class="mb-16"
-                                        formControlName="background"></j-material-color-picker>
+                                     formControlName="background"></j-material-color-picker>
 
           </div>
 
-          <!-- FOOTER -->
+          <!-- 页面底部 -->
           <div class="group" formGroupName="footer">
 
-            <h2>Footer</h2>
+            <h2>页面底部</h2>
+            <mat-slide-toggle formControlName="hidden">隐藏</mat-slide-toggle>
 
-            <mat-slide-toggle formControlName="hidden">
-              Hide
-            </mat-slide-toggle>
-
-            <h3 class="mt-24">Position:</h3>
+            <h3 class="mt-24">位置：</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-              <mat-radio-button class="mb-12" value="above-static">Above Static</mat-radio-button>
-              <mat-radio-button class="mb-12" value="above-fixed">Above Fixed</mat-radio-button>
+              <mat-radio-button class="mb-12" value="above-static">上方静态</mat-radio-button>
+              <mat-radio-button class="mb-12" value="above-fixed">上方固定</mat-radio-button>
             </mat-radio-group>
 
-            <mat-checkbox class="mt-24" formControlName="customBackgroundColor">
-              Use custom background color
-            </mat-checkbox>
+            <mat-checkbox class="mt-24" formControlName="customBackgroundColor">使用用户自定义背景色</mat-checkbox>
 
-            <h3 class="mt-24 mb-8">Background color:</h3>
+            <h3 class="mt-24 mb-8">背景色：</h3>
             <j-material-color-picker class="mb-16"
-                                        formControlName="background"></j-material-color-picker>
+                                     formControlName="background"></j-material-color-picker>
 
           </div>
-
-          <!-- SIDE PANEL -->
-          <div class="group" formGroupName="sidepanel">
-
-            <h2>Side Panel</h2>
-
-            <mat-slide-toggle formControlName="hidden">
-              Hide
-            </mat-slide-toggle>
-
-            <h3 class="mt-24">Position:</h3>
-            <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-              <mat-radio-button class="mb-12" value="left">Left</mat-radio-button>
-              <mat-radio-button class="mb-12" value="right">Right</mat-radio-button>
-            </mat-radio-group>
-
-          </div>
-
         </ng-container>
 
-        <!-- HORIZONTAL LAYOUT #1 -->
+        <!-- 水平布局 -->
         <ng-container *ngSwitchCase="'horizontal-layout-default'">
 
-          <!-- LAYOUT WIDTH -->
+          <!-- 页面宽度 -->
           <div class="group mt-32">
 
-            <h2>Layout Width</h2>
+            <h2>页面宽度</h2>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="width">
-              <mat-radio-button class="mb-12" value="fullwidth">Fullwidth</mat-radio-button>
-              <mat-radio-button class="mb-12" value="boxed">Boxed</mat-radio-button>
+              <mat-radio-button class="mb-12" value="fullwidth">全屏</mat-radio-button>
+              <mat-radio-button class="mb-12" value="boxed">固定宽度</mat-radio-button>
             </mat-radio-group>
 
           </div>
 
-          <!-- NAVBAR -->
+          <!-- 导航 -->
           <div class="group" formGroupName="navbar">
 
-            <h2>Navbar</h2>
+            <h2>导航</h2>
+            <mat-slide-toggle formControlName="hidden">隐藏</mat-slide-toggle>
 
-            <mat-slide-toggle formControlName="hidden">
-              Hide
-            </mat-slide-toggle>
-
-            <h3 class="mt-24">Position:</h3>
+            <h3 class="mt-24">位置：</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-              <mat-radio-button class="mb-16" value="top">Top</mat-radio-button>
+              <mat-radio-button class="mb-16" value="top">顶部</mat-radio-button>
             </mat-radio-group>
 
-            <h3 class="mt-8">Variant (Vertical):</h3>
+            <h3 class="mt-8">垂直布局导航：</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="variant">
-              <mat-radio-button class="mb-16" value="vertical-default">Style 1</mat-radio-button>
-              <mat-radio-button class="mb-16" value="vertical-pure">Style 2</mat-radio-button>
+              <mat-radio-button class="mb-16" value="vertical-default">显示用户信息</mat-radio-button>
+              <mat-radio-button class="mb-16" value="vertical-pure">不显示用户信息</mat-radio-button>
             </mat-radio-group>
 
-            <h3 class="mt-16 mb-8">Primary background:</h3>
+            <h3 class="mt-16 mb-8">主背景色：</h3>
             <j-material-color-picker class="mb-16"
-                                        formControlName="primaryBackground">
+                                     formControlName="primaryBackground">
             </j-material-color-picker>
 
-            <h3 class="mt-16 mb-8">Secondary background (Vertical):</h3>
+            <h3 class="mt-16 mb-8">次背景色：</h3>
             <j-material-color-picker class="mb-16"
-                                        formControlName="secondaryBackground">
+                                     formControlName="secondaryBackground">
             </j-material-color-picker>
 
           </div>
 
-          <!-- TOOLBAR -->
+          <!-- 顶部工具栏 -->
           <div class="group" formGroupName="toolbar">
 
-            <h2>Toolbar</h2>
+            <h2>顶部工具栏</h2>
+            <mat-slide-toggle formControlName="hidden">隐藏</mat-slide-toggle>
 
-            <mat-slide-toggle formControlName="hidden">
-              Hide
-            </mat-slide-toggle>
-
-            <h3 class="mt-24">Position:</h3>
+            <h3 class="mt-24">位置：</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-              <mat-radio-button class="mb-12" value="above">Above</mat-radio-button>
-              <mat-radio-button class="mb-12" value="below">Below</mat-radio-button>
+              <mat-radio-button class="mb-12" value="above">上方</mat-radio-button>
+              <mat-radio-button class="mb-12" value="below">下方</mat-radio-button>
             </mat-radio-group>
 
-            <mat-checkbox class="mt-24" formControlName="customBackgroundColor">
-              Use custom background color
-            </mat-checkbox>
+            <mat-checkbox class="mt-24" formControlName="customBackgroundColor">使用用户自定义背景色</mat-checkbox>
 
-            <h3 class="mt-24 mb-8">Background color:</h3>
+            <h3 class="mt-24 mb-8">背景色：</h3>
             <j-material-color-picker class="mb-16"
-                                        formControlName="background"></j-material-color-picker>
+                                     formControlName="background"></j-material-color-picker>
 
           </div>
 
-          <!-- FOOTER -->
+          <!-- 页面底部 -->
           <div class="group" formGroupName="footer">
 
-            <h2>Footer</h2>
+            <h2>页面底部</h2>
+            <mat-slide-toggle formControlName="hidden">隐藏</mat-slide-toggle>
 
-            <mat-slide-toggle formControlName="hidden">
-              Hide
-            </mat-slide-toggle>
-
-            <h3 class="mt-24">Position:</h3>
+            <h3 class="mt-24">位置：</h3>
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-              <mat-radio-button class="mb-12" value="above-fixed">Above Fixed</mat-radio-button>
-              <mat-radio-button class="mb-12" value="above-static">Above Static</mat-radio-button>
+              <mat-radio-button class="mb-12" value="above-fixed">上方固定</mat-radio-button>
+              <mat-radio-button class="mb-12" value="above-static">上方静态</mat-radio-button>
             </mat-radio-group>
 
-            <mat-checkbox class="mt-24" formControlName="customBackgroundColor">
-              Use custom background color
-            </mat-checkbox>
+            <mat-checkbox class="mt-24" formControlName="customBackgroundColor">使用用户自定义背景色</mat-checkbox>
 
-            <h3 class="mt-24 mb-8">Background color:</h3>
+            <h3 class="mt-24 mb-8">背景色：</h3>
             <j-material-color-picker class="mb-16"
-                                        formControlName="background"></j-material-color-picker>
+                                     formControlName="background"></j-material-color-picker>
 
           </div>
-
-          <!-- SIDE PANEL -->
-          <div class="group" formGroupName="sidepanel">
-
-            <h2>Side Panel</h2>
-
-            <mat-slide-toggle formControlName="hidden">
-              Hide
-            </mat-slide-toggle>
-
-            <h3 class="mt-24">Position:</h3>
-            <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-              <mat-radio-button class="mb-12" value="left">Left</mat-radio-button>
-              <mat-radio-button class="mb-12" value="right">Right</mat-radio-button>
-            </mat-radio-group>
-
-          </div>
-
         </ng-container>
 
       </ng-container>
 
     </div>
 
-    <!-- CUSTOM SCROLLBARS -->
+    <!-- 自定义滚动条 -->
     <div class="group">
-
-      <h2>Custom scrollbars</h2>
-
-      <mat-slide-toggle class="mb-12" formControlName="customScrollbars">
-        Enable custom scrollbars
-      </mat-slide-toggle>
-
+      <h2>自定义滚动条</h2>
+      <mat-slide-toggle class="mb-12" formControlName="customScrollbars">允许自定义滚动条</mat-slide-toggle>
     </div>
-
   </form>
-
 </div>
