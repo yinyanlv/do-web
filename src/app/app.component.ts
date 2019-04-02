@@ -44,11 +44,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
     this._translateService.addLangs(['zh', 'en']);
 
-    this._translateService.setDefaultLang('en');
+    this._translateService.setDefaultLang('zh');
 
     this._jTranslationLoaderService.loadTranslations(localeZh, localeEn);
 
-    this._translateService.use('en');
+    this._translateService.use('zh');
 
     if (this._platform.ANDROID || this._platform.IOS) {
       this.document.body.classList.add('is-mobile');
