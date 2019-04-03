@@ -1,6 +1,6 @@
 <ng-container>
   <div class="group-title" [ngClass]="item.classes">
-    <span class="hint-text">{{item.title}}</span>
+    <span class="hint-text" [translate]="item.translate">{{item.title}}</span>
   </div>
   <div class="group-items">
     <ng-container *ngFor="let subItem of item.children">
