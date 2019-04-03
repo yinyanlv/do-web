@@ -1,4 +1,4 @@
-export class QuickPanelFakeDb {
+export class QuickPanelDb {
   public static notes = [
     {
       'title': 'Best songs to listen while working',
