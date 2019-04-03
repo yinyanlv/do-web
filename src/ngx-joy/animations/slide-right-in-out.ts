@@ -1,6 +1,6 @@
 import {animate, AnimationTriggerMetadata, state, style, transition, trigger} from '@angular/animations';
 
-export const jSlideInOutRightAnimation: AnimationTriggerMetadata = trigger('jSlideInOutRight', [
+export const jSlideRightInOutAnimation: AnimationTriggerMetadata = trigger('jSlideRightInOut', [
   state('void', style({
     display: 'none',
     transform: 'translateX(100%)'
