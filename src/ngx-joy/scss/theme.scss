@@ -1,5 +1,3 @@
-//@import "src/ngx-joy/components/countdown/countdown.theme";
-//@import "src/ngx-joy/components/widget/widget.theme";
 @import "src/ngx-joy/components/material-color-picker/material-color-picker.theme";
 @import "src/ngx-joy/components/search-bar/search-bar.theme";
 @import "src/ngx-joy/components/shortcuts/shortcuts.theme";
@@ -9,14 +7,9 @@
 
   // Theming for ngx-joy core styles
   @include colors-theme($theme);
-  @include cards-theme($theme);
   @include material-theme($theme);
-  @include page-layouts-theme($theme);
-  @include typography-theme($theme);
 
   // Theming for ngx-joy components
-  //@include j-countdown-theme($theme);
-  //@include j-widget-theme($theme);
   @include j-search-bar-theme($theme);
   @include j-shortcuts-theme($theme);
   @include j-sidebar-theme($theme);

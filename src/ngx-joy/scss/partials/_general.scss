@@ -1,6 +1,7 @@
-// -----------------------------------------------------------------------------------------------------
-// @ Body scroll lock
-// -----------------------------------------------------------------------------------------------------
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   display: flex;
@@ -14,12 +15,16 @@ body {
   overflow: hidden;
 }
 
-// -----------------------------------------------------------------------------------------------------
-// @ Boxed body
-// -----------------------------------------------------------------------------------------------------
-body {
+html {
+  font-size: 62.5%;
+  font-family: 'Muli', 'Helvetica Neue', 'Arial', sans-serif;
+  line-height: 1.4 !important;
+  letter-spacing: -0.1px !important;
+}
 
-  // Boxed
+body {
+  font-size: 14px;
+
   &.boxed {
     max-width: 1200px;
     margin: 0 auto;
@@ -28,42 +33,27 @@ body {
   }
 }
 
-/*----------------------------------------------------------------*/
-/*  @ Text rendering & box sizing
-/*----------------------------------------------------------------*/
-* {
-  text-rendering: optimizeLegibility;
-  -o-text-rendering: optimizeLegibility;
-  -ms-text-rendering: optimizeLegibility;
-  -moz-text-rendering: optimizeLegibility;
-  -webkit-text-rendering: optimizeLegibility;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-
-  &:before, &:after {
-    box-sizing: border-box;
-  }
-
-  // Remove focus outline
-  &:focus {
-    outline: none;
-  }
-}
-
-// -----------------------------------------------------------------------------------------------------
-// @ Responsive images
-// -----------------------------------------------------------------------------------------------------
-img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: top;
-  border: none;
-}
-
-// -----------------------------------------------------------------------------------------------------
-// @ Input
-// -----------------------------------------------------------------------------------------------------
 input {
   border: none;
   padding: 0 16px;
+}
+
+button,
+input[type=email],
+input[type=tel],
+input[type=text],
+input[type=password],
+input[type=image],
+input[type=submit],
+input[type=button],
+input[type=search],
+textarea {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+}
+
+.btn {
+  -webkit-tap-highlight-color: transparent;
 }
