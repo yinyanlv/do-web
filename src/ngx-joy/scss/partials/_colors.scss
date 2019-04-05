@@ -32,15 +32,6 @@
   .hint-text {
     color: map-get($foreground, hint-text);
   }
-
-  .disabled-text {
-    color: map-get($foreground, disabled-text);
-  }
-
-  .fade-text,
-  .divider {
-    color: map-get($foreground, divider);
-  }
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -93,23 +84,12 @@ $matHues: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A70
       }
 
       &.hint-text,
-      .hint-text,
-      &.disabled-text,
-      .disabled-text {
+      .hint-text{
         color: rgba(0, 0, 0, 0.38) !important;
-      }
-
-      &.divider,
-      .divider {
-        color: rgba(0, 0, 0, 0.12) !important;
       }
 
       .mat-ripple-element {
         background: rgba(0, 0, 0, 0.1);
-      }
-
-      .adaptive-border-color {
-        border-color: rgba(0, 0, 0, 0.12);
       }
     }
 
@@ -131,23 +111,12 @@ $matHues: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A70
       }
 
       &.hint-text,
-      .hint-text,
-      &.disabled-text,
-      .disabled-text {
+      .hint-text {
         color: rgba(255, 255, 255, 0.50) !important;
-      }
-
-      &.divider,
-      .divider {
-        color: rgba(255, 255, 255, 0.12) !important;
       }
 
       .mat-ripple-element {
         background: rgba(255, 255, 255, 0.1);
-      }
-
-      .adaptive-border-color {
-        border-color: rgba(255, 255, 255, 0.12);
       }
     }
   }
@@ -225,10 +194,6 @@ $matHues: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A70
 // -----------------------------------------------------------------------------------------------------
 @mixin generate-color-classes($colorName, $color, $contrastColor, $hue) {
 
-  .#{$colorName}#{$hue}-bg {
-    background-color: $color !important;
-  }
-
   .#{$colorName}#{$hue} {
     background-color: $color !important;
     color: $contrastColor !important;
@@ -243,24 +208,8 @@ $matHues: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A70
     color: $color !important;
   }
 
-  .#{$colorName}#{$hue}-border {
-    border-color: $color !important;
-  }
-
-  .#{$colorName}#{$hue}-border-top {
-    border-top-color: $color !important;
-  }
-
-  .#{$colorName}#{$hue}-border-right {
-    border-right-color: $color !important;
-  }
-
-  .#{$colorName}#{$hue}-border-bottom {
-    border-bottom-color: $color !important;
-  }
-
-  .#{$colorName}#{$hue}-border-left {
-    border-left-color: $color !important;
+  .#{$colorName}#{$hue}-bg {
+    background-color: $color !important;
   }
 }
 
