@@ -5,17 +5,14 @@
 
 @mixin j-core-theme($theme) {
 
-  // Theming for ngx-joy core styles
   @include colors-theme($theme);
   @include material-theme($theme);
 
-  // Theming for ngx-joy components
   @include j-search-bar-theme($theme);
   @include j-shortcuts-theme($theme);
   @include j-sidebar-theme($theme);
   @include j-material-color-picker-theme($theme);
 
-  // Theming for 3rd party components
   @include ngx-datatable-theme($theme);
 }
 
