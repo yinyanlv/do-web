@@ -25,6 +25,13 @@
       <div id="container-3" class="container" jPerfectScrollbar
            [jPerfectScrollbarOptions]="{suppressScrollX: true, updateOnRouteChange : true}">
 
+        <div>
+          <div><a routerLink="/dashboard">dashboard</a> <a routerLink="/article" style="margin-left: 20px;">article</a></div>
+          <div>
+            <reuse-tab [mode]="0"></reuse-tab>
+          </div>
+        </div>
+
         <!-- TOOLBAR: Below static -->
         <ng-container *ngIf="jConfig.layout.toolbar.position === 'below-static'">
           <ng-container *ngTemplateOutlet="toolbar"></ng-container>

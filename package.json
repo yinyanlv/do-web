@@ -32,6 +32,7 @@
     "ngx-cookie-service": "^2.1.0",
     "ngx-joy": "0.0.2",
     "perfect-scrollbar": "^1.4.0",
+    "reuse-tab": "^1.0.5",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"

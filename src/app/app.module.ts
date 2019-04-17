@@ -5,6 +5,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatIconModule} from '@angular/material';
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {TranslateModule} from '@ngx-translate/core';
+import {RouteReuseStrategy} from '@angular/router';
+import {ReuseTabStrategy, ReuseTabService} from 'reuse-tab';
 import 'hammerjs';
 import {NgxJoyModule} from 'src/ngx-joy/ngx-joy.module';
 import {JSharedModule} from 'src/ngx-joy/shared.module';
@@ -38,6 +40,14 @@ import {appRoutingModule} from './app.routing';
     JSidebarModule,
     ThemeOptionsModule,
     LayoutsModule
+  ],
+  providers: [
+    {
+      provide: RouteReuseStrategy,
+      useClass: ReuseTabStrategy,
+      deps: [ReuseTabService]
+    },
+    ReuseTabService
   ],
   bootstrap: [
     AppComponent
