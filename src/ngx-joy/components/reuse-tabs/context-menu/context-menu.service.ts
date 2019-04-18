@@ -13,7 +13,7 @@ export class JReuseTabsContextMenuService {
   }
 
   showContextMenu(e: MouseEvent) {
-    this.hideContextMenu();
+    this.removeContextMenu();
     const fakeElement = new ElementRef({
       getBoundingClientRect: (): ClientRect => ({
         width: 0,
@@ -40,15 +40,17 @@ export class JReuseTabsContextMenuService {
       .withPositions(positions);
     this._overlayRef = this._overlay.create({
       positionStrategy,
-      panelClass: 'reuse-tab-cm',
+      panelClass: 'j-reuse-tabs',
       scrollStrategy: this._overlay.scrollStrategies.close(),
     });
-    const comp = this._overlayRef.attach(
-      new ComponentPortal(JReuseTabsContextMenuComponent),
+    const cmp = this._overlayRef.attach(
+      new ComponentPortal(JReuseTabsContextMenuComponent)
     );
+
+    cmp.instance.subject.next('show');
   }
 
-  hideContextMenu() {
+  removeContextMenu() {
     if (!this._overlayRef) {
       return;
     }
