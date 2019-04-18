@@ -6,11 +6,11 @@ import {MatButtonModule, MatIconModule} from '@angular/material';
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {TranslateModule} from '@ngx-translate/core';
 import {RouteReuseStrategy} from '@angular/router';
-import {ReuseTabStrategy, ReuseTabService} from 'reuse-tab';
 import 'hammerjs';
 import {NgxJoyModule} from 'src/ngx-joy/ngx-joy.module';
 import {JSharedModule} from 'src/ngx-joy/shared.module';
 import {JProgressBarModule, JSidebarModule} from 'src/ngx-joy/components';
+import {JRouteReuseStrategy} from 'src/ngx-joy/components/reuse-tabs/route-reuse-strategy';
 import {jConfig} from './config/ngx-joy.config';
 import {MockService} from './services/mock.service';
 import {AppComponent} from './app.component';
@@ -41,14 +41,10 @@ import {appRoutingModule} from './app.routing';
     ThemeOptionsModule,
     LayoutsModule
   ],
-  providers: [
-    {
-      provide: RouteReuseStrategy,
-      useClass: ReuseTabStrategy,
-      deps: [ReuseTabService]
-    },
-    ReuseTabService
-  ],
+  providers: [{
+    provide: RouteReuseStrategy,
+    useClass: JRouteReuseStrategy
+  }],
   bootstrap: [
     AppComponent
   ]

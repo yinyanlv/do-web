@@ -76,6 +76,7 @@
     ],
     "object-literal-key-quotes": [
       "consistent"
-    ]
+    ],
+    "no-shadowed-variable": false
   }
 }

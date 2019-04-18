@@ -2,7 +2,6 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import {ReuseTabService} from 'reuse-tab';
 import {JConfigService} from 'src/ngx-joy/services/config.service';
 
 @Component({
@@ -18,7 +17,6 @@ export class VerticalLayoutDefaultComponent implements OnInit, OnDestroy {
 
   constructor(
     private _route: ActivatedRoute,
-    private _reuseTabService: ReuseTabService,
     private _jConfigService: JConfigService
   ) {
     this._unsubscribeAll = new Subject();
@@ -30,10 +28,6 @@ export class VerticalLayoutDefaultComponent implements OnInit, OnDestroy {
       .subscribe((config) => {
         this.jConfig = config;
       });
-
-    this._route.params.subscribe(params => {
-      this._reuseTabService.title = `编辑 ${params.id}`;
-    });
   }
 
   ngOnDestroy(): void {

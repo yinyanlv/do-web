@@ -23,7 +23,7 @@ export const jConfig: JConfig = {
     footer: {
       customBackgroundColor: true,
       background: 'j-navy-900',
-      hidden: false,
+      hidden: true,
       position: 'below-static'
     }
   }

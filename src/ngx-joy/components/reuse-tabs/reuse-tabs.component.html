@@ -1,0 +1,10 @@
+<mat-tab-group [selectedIndex]="activeIndex" (selectedIndexChange)="activateTab(activeIndex)">
+  <mat-tab *ngFor="let item of tabs; let index = index;">
+    <ng-template mat-tab-label>
+      <span>{{item.title}}</span>
+      <button mat-icon-button (click)="closeTab(item)">
+        <mat-icon>close</mat-icon>
+      </button>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

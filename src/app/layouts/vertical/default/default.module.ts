@@ -1,10 +1,9 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import {AdReuseTabModule} from 'reuse-tab';
-
 import {JSidebarModule} from 'src/ngx-joy/components';
 import {JSharedModule} from 'src/ngx-joy/shared.module';
 import {JContentModule} from 'src/ngx-joy/components/content/content.module';
+import {JReuseTabsModule} from 'src/ngx-joy/components/reuse-tabs/reuse-tabs.module';
 import {FooterModule} from '../../../components/footer/footer.module';
 import {NavbarModule} from '../../../components/navbar/navbar.module';
 import {QuickPanelModule} from '../../../components/quick-panel/quick-panel.module';
@@ -25,7 +24,7 @@ import {VerticalLayoutDefaultComponent} from '../../../layouts/vertical/default/
     NavbarModule,
     QuickPanelModule,
     ToolbarModule,
-    AdReuseTabModule
+    JReuseTabsModule
   ],
   exports: [
     VerticalLayoutDefaultComponent
