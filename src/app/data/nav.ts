@@ -19,13 +19,13 @@ export const navItems: JNavItem[] = [
             id: 'analytics',
             title: 'Analytics',
             type: 'item',
-            url: '/apps/dashboards/analytics'
+            url: '/dashboard'
           },
           {
-            id: 'project',
-            title: 'Project',
+            id: 'article',
+            title: 'Article',
             type: 'item',
-            url: '/apps/dashboards/project'
+            url: '/article'
           }
         ]
       },

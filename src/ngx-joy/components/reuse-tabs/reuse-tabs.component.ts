@@ -2,8 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
 import {filter, map} from 'rxjs/operators';
 import {JRouteReuseStrategy} from './route-reuse-strategy';
-import {navItems} from '../../../app/data/nav';
 import {JNavItem} from '../nav/nav.component';
+import {JNavService} from '../nav/nav.service';
+import {JReuseTabsContextMenuService} from './context-menu/context-menu.service';
 
 export interface Tab {
   id?: string;
@@ -14,25 +15,26 @@ export interface Tab {
 @Component({
   selector: 'j-reuse-tabs',
   templateUrl: './reuse-tabs.component.html',
-  styleUrls: ['./reuse-tabs.component.scss']
+  styleUrls: ['./reuse-tabs.component.scss'],
+  providers: [
+    JReuseTabsContextMenuService
+  ]
 })
 export class JReuseTabsComponent implements OnInit {
 
-  nav: JNavItem[] = navItems;
+  nav: JNavItem[];
   tabs: Tab[] = [];
   activeIndex: number = 0;
 
   constructor(
     private _activatedRoute: ActivatedRoute,
-    private _router: Router
+    private _router: Router,
+    private _jNavService: JNavService
   ) {
   }
 
   ngOnInit() {
-    const snapshot = this._activatedRoute.snapshot as any;
-    const url = snapshot._routerState.url;
-
-    this.tabs.push(this.getTabData(url));
+    this.nav = this._jNavService.getFlatNav(this._jNavService.getCurrentNav());
 
     this._router.events
       .pipe(filter((event) => {
@@ -51,8 +53,10 @@ export class JReuseTabsComponent implements OnInit {
         if (index !== -1) {
           this.activeIndex = index;
         } else {
-          this.tabs.push(this.getTabData(url));
-          this.activeIndex++;
+          if (url !== '/') {
+            this.tabs.push(this.getTabData(url));
+            this.activeIndex++;
+          }
         }
       });
   }
@@ -60,24 +64,16 @@ export class JReuseTabsComponent implements OnInit {
   getTabData(url: string): Tab {
     let data: any = {};
 
-    this.nav.forEach((subNav: any) => {
-
-      subNav.children.forEach((item: JNavItem) => {
-        if (item.url === url) {
-          data = item;
-        }
-      });
+    this.nav.forEach((item: any) => {
+      if (item.url === url) {
+        data = item;
+        return;
+      }
     });
-
     return data as Tab;
   }
 
   closeTab(tab: Tab): void {
-
-    if (this.tabs.length <= 1) {
-      return;
-    }
-
     const activeIndex = this.tabs.indexOf(tab);
     const nextActiveIndex = activeIndex === 0 ? activeIndex + 1 : activeIndex - 1;
     const nextActiveTab = this.tabs[nextActiveIndex];
@@ -96,7 +92,6 @@ export class JReuseTabsComponent implements OnInit {
   }
 
   activateTab(index: number) {
-
     this._router.navigate([this.tabs[index].url]);
   }
 }
