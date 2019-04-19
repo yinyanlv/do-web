@@ -1,6 +1,5 @@
 import {Component, ViewChild, OnInit, ElementRef} from '@angular/core';
-import {Observable, Subject} from 'rxjs';
-import {JReuseTabsContextMenuItemsComponent} from './context-menu-items.component';
+import {MatMenu} from '@angular/material';
 
 @Component({
   selector: 'j-reuse-tabs-context-menu',
@@ -8,23 +7,11 @@ import {JReuseTabsContextMenuItemsComponent} from './context-menu-items.componen
   styleUrls: ['./context-menu.component.scss']
 })
 export class JReuseTabsContextMenuComponent implements OnInit {
-  subject: Subject<any> = new Subject();
-  observer$: Observable<any>;
 
   @ViewChild('contextMenuTrigger')
-  contextMenuTrigger: ElementRef;
-
-  @ViewChild(JReuseTabsContextMenuItemsComponent)
-  contextMenuItems: JReuseTabsContextMenuItemsComponent;
+  private _contextMenuTrigger: ElementRef;
 
   constructor() {
-
-    this.observer$ = this.subject.asObservable();
-
-    this.observer$.subscribe((data) => {
-      console.log(data);
-      this.showContextMenu();
-    });
   }
 
   ngOnInit() {
@@ -36,7 +23,7 @@ export class JReuseTabsContextMenuComponent implements OnInit {
   }
 
   showContextMenu() {
-    this.contextMenuTrigger.nativeElement.click();
+    this._contextMenuTrigger.nativeElement.click();
   }
 }
 

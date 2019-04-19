@@ -40,14 +40,16 @@ export class JReuseTabsContextMenuService {
       .withPositions(positions);
     this._overlayRef = this._overlay.create({
       positionStrategy,
-      panelClass: 'j-reuse-tabs',
       scrollStrategy: this._overlay.scrollStrategies.close(),
     });
     const cmp = this._overlayRef.attach(
       new ComponentPortal(JReuseTabsContextMenuComponent)
     );
-
-    cmp.instance.subject.next('show');
+    // fix: ERROR Error: matMenuTriggerFor: must pass in an mat-menu instance.
+    // 需要加一个延迟，可能是因为MatMenu本来就属于entryComponents，实例化的时机可能做了某种延迟，立即调用时，MatMenu尚未实例化，因此报错
+    setTimeout(() => {
+      cmp.instance.showContextMenu();
+    }, 0);
   }
 
   removeContextMenu() {

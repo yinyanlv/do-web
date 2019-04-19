@@ -3,14 +3,12 @@ import {CommonModule} from '@angular/common';
 import {MatButtonModule, MatTabsModule, MatIconModule, MatMenuModule, MatCardModule} from '@angular/material';
 import {JReuseTabsComponent} from './reuse-tabs.component';
 import {JReuseTabsContextMenuComponent} from './context-menu/context-menu.component';
-import {JReuseTabsContextMenuItemsComponent} from './context-menu/context-menu-items.component';
 import {JReuseTabsContextMenuDirective} from './context-menu/context-menu.directive';
 
 @NgModule({
   declarations: [
     JReuseTabsComponent,
     JReuseTabsContextMenuComponent,
-    JReuseTabsContextMenuItemsComponent,
     JReuseTabsContextMenuDirective
   ],
   imports: [

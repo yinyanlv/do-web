@@ -1,4 +1,4 @@
-import {Directive, HostBinding, HostListener, Input, OnInit} from '@angular/core';
+import {Directive, HostListener, Input, OnInit} from '@angular/core';
 import {Tab} from '../reuse-tabs.component';
 import {JReuseTabsContextMenuService} from './context-menu.service';
 
