@@ -3,18 +3,10 @@ import {Routes, RouterModule} from '@angular/router';
 
 const routes: Routes = [{
   path: 'dashboard',
-  loadChildren: './pages/dashboard/dashboard.module#DashboardModule',
-  data: {
-    text: 'dashboard',
-    reuse: true
-  }
+  loadChildren: './pages/dashboard/dashboard.module#DashboardModule'
 }, {
   path: 'article',
-  loadChildren: './pages/article/article.module#ArticleModule',
-  data: {
-    text: 'article',
-    reuse: true
-  }
+  loadChildren: './pages/article/article.module#ArticleModule'
 }];
 
 export const appRoutingModule: ModuleWithProviders = RouterModule.forRoot(routes, {

@@ -4,7 +4,11 @@ import {ArticleComponent} from './article.component';
 
 const routes: Routes = [{
   path: '',
-  component: ArticleComponent
+  component: ArticleComponent,
+  data: {
+    title: 'article',
+    reuse: true
+  }
 }];
 
 export const articleRoutingModule: ModuleWithProviders = RouterModule.forChild(routes);
