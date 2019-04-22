@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MatButtonModule, MatTabsModule, MatIconModule, MatMenuModule, MatCardModule} from '@angular/material';
+import {MatButtonModule, MatTabsModule, MatIconModule, MatMenuModule, MatDividerModule} from '@angular/material';
 import {JReuseTabsComponent} from './reuse-tabs.component';
 import {JReuseTabsContextMenuComponent} from './context-menu/context-menu.component';
 import {JReuseTabsContextMenuDirective} from './context-menu/context-menu.directive';
@@ -17,7 +17,7 @@ import {JReuseTabsContextMenuDirective} from './context-menu/context-menu.direct
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
-    MatCardModule
+    MatDividerModule
   ],
   exports: [
     JReuseTabsComponent

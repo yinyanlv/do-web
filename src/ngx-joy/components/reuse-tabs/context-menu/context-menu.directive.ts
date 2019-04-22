@@ -1,5 +1,5 @@
 import {Directive, HostListener, Input, OnInit} from '@angular/core';
-import {Tab} from '../reuse-tabs.component';
+import {JTab} from '../reuse-tabs.component';
 import {JReuseTabsContextMenuService} from './context-menu.service';
 
 @Directive({
@@ -8,7 +8,7 @@ import {JReuseTabsContextMenuService} from './context-menu.service';
 export class JReuseTabsContextMenuDirective implements OnInit {
 
   @Input('j-reuse-tabs-context-menu')
-  private _item: Tab;
+  private _item: JTab;
 
   constructor(
     private _jReuseTabsContextMenuService: JReuseTabsContextMenuService
@@ -21,7 +21,7 @@ export class JReuseTabsContextMenuDirective implements OnInit {
   @HostListener('contextmenu', ['$event'])
   onContextMenu(e: MouseEvent): void {
 
-    this._jReuseTabsContextMenuService.showContextMenu(e);
+    this._jReuseTabsContextMenuService.showContextMenu(e, this._item);
     e.preventDefault();
     e.stopPropagation();
   }

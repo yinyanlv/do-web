@@ -1,12 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
+import {ActivatedRoute, Router, NavigationEnd, DetachedRouteHandle} from '@angular/router';
 import {filter, map} from 'rxjs/operators';
 import {JRouteReuseStrategy} from './route-reuse-strategy';
 import {JNavItem} from '../nav/nav.component';
 import {JNavService} from '../nav/nav.service';
 import {JReuseTabsContextMenuService} from './context-menu/context-menu.service';
+import {JContextMenuAction} from './context-menu/context-menu.component';
 
-export interface Tab {
+export interface JTab {
   id?: string;
   title: string;
   url: string;
@@ -23,13 +24,14 @@ export interface Tab {
 export class JReuseTabsComponent implements OnInit {
 
   nav: JNavItem[];
-  tabs: Tab[] = [];
+  tabs: JTab[] = [];
   activeIndex: number = 0;
 
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _router: Router,
-    private _jNavService: JNavService
+    private _jNavService: JNavService,
+    private _jContextMenuService: JReuseTabsContextMenuService
   ) {
   }
 
@@ -59,9 +61,13 @@ export class JReuseTabsComponent implements OnInit {
           }
         }
       });
+
+    this._jContextMenuService.onContextMenuChange.subscribe((data) => {
+      this.handleContextMenuAction(data);
+    });
   }
 
-  getTabData(url: string): Tab {
+  getTabData(url: string): JTab {
     let data: any = {};
 
     this.nav.forEach((item: any) => {
@@ -70,10 +76,10 @@ export class JReuseTabsComponent implements OnInit {
         return;
       }
     });
-    return data as Tab;
+    return data as JTab;
   }
 
-  closeTab(tab: Tab): void {
+  closeTab(tab: JTab): void {
     const activeIndex = this.tabs.indexOf(tab);
     const nextActiveIndex = activeIndex === 0 ? activeIndex + 1 : activeIndex - 1;
     const nextActiveTab = this.tabs[nextActiveIndex];
@@ -84,7 +90,9 @@ export class JReuseTabsComponent implements OnInit {
       return item === nextActiveTab;
     });
 
-    this._router.navigate([nextActiveTab.url]);
+    if (nextActiveTab) {
+      this._router.navigate([nextActiveTab.url]);
+    }
 
     setTimeout(() => {
       delete JRouteReuseStrategy.handles[tab.url.replace(/\//g, '_')];
@@ -92,6 +100,51 @@ export class JReuseTabsComponent implements OnInit {
   }
 
   activateTab(index: number) {
-    this._router.navigate([this.tabs[index].url]);
+    if (this.tabs[index]) {
+      this._router.navigate([this.tabs[index].url]);
+    }
+  }
+
+  handleContextMenuAction(data: any) {
+
+    if (!data.action) {
+      return;
+    }
+
+    switch (data.action) {
+      case 'close-current':
+        this._closeCurrent(data.payload);
+        break;
+      case 'close-other':
+        this._closeOther(data.payload);
+        break;
+      case 'close-all':
+        this._closeAll();
+        break;
+    }
+  }
+
+  private _closeCurrent(tab: JTab) {
+
+    this.closeTab(tab);
+  }
+
+  private _closeOther(tab: JTab) {
+    const key = tab.url.replace(/\//g, '_');
+    const routeHandle: DetachedRouteHandle = JRouteReuseStrategy.handles[key];
+    this.tabs = [tab];
+    this.activeIndex = 0;
+
+    setTimeout(() => {
+      JRouteReuseStrategy.handles = {};
+      JRouteReuseStrategy.handles[key] = routeHandle;
+    });
+  }
+
+  private _closeAll() {
+
+    this.tabs = [];
+    this.activeIndex = 0;
+    JRouteReuseStrategy.handles = {};
   }
 }

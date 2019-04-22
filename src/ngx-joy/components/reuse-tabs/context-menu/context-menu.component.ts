@@ -1,5 +1,5 @@
 import {Component, ViewChild, OnInit, ElementRef} from '@angular/core';
-import {MatMenu} from '@angular/material';
+import {Observable, Subject} from 'rxjs';
 
 @Component({
   selector: 'j-reuse-tabs-context-menu',
@@ -7,19 +7,25 @@ import {MatMenu} from '@angular/material';
   styleUrls: ['./context-menu.component.scss']
 })
 export class JReuseTabsContextMenuComponent implements OnInit {
+  private _onContextMenuChange: Subject<any>;
 
   @ViewChild('contextMenuTrigger')
   private _contextMenuTrigger: ElementRef;
 
-  constructor() {
+  constructor(
+  ) {
+    this._onContextMenuChange = new Subject();
   }
 
   ngOnInit() {
   }
 
-  handle(action: ContextMenuAction) {
+  get onContextMenuChange(): Observable<any> {
+    return this._onContextMenuChange.asObservable();
+  }
 
-    console.log(action);
+  handle(action: JContextMenuAction): void {
+    this._onContextMenuChange.next(action);
   }
 
   showContextMenu() {
@@ -27,4 +33,4 @@ export class JReuseTabsContextMenuComponent implements OnInit {
   }
 }
 
-type ContextMenuAction = 'close-current' | 'close-other' | 'close-right' | 'close-all';
+export type JContextMenuAction = 'close-current' | 'close-other' | 'close-all';
