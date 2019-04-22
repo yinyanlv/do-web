@@ -7,7 +7,7 @@ const routes: Routes = [{
   component: DashboardComponent,
   data: {
     title: 'dashboard',
-    reuse: false
+    reuse: true
   }
 }];
 

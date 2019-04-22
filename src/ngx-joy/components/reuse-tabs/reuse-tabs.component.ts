@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router, NavigationEnd, DetachedRouteHandle} from '@angular/router';
 import {filter, map} from 'rxjs/operators';
 import {JRouteReuseStrategy} from './route-reuse-strategy';
@@ -26,6 +26,9 @@ export class JReuseTabsComponent implements OnInit {
   nav: JNavItem[];
   tabs: JTab[] = [];
   activeIndex: number = 0;
+
+  @Input('defaultUrl')
+  _defaultUrl: string = '/';
 
   constructor(
     private _activatedRoute: ActivatedRoute,
@@ -92,6 +95,8 @@ export class JReuseTabsComponent implements OnInit {
 
     if (nextActiveTab) {
       this._router.navigate([nextActiveTab.url]);
+    } else {
+      this._router.navigate([this._defaultUrl]);
     }
 
     setTimeout(() => {
@@ -146,5 +151,6 @@ export class JReuseTabsComponent implements OnInit {
     this.tabs = [];
     this.activeIndex = 0;
     JRouteReuseStrategy.handles = {};
+    this._router.navigate([this._defaultUrl]);
   }
 }
