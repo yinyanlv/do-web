@@ -1,8 +1,14 @@
 import {RouteReuseStrategy, ActivatedRouteSnapshot, DetachedRouteHandle} from '@angular/router';
+import {JRouteReuseStrategyService} from './route-reuse-strategy.service';
+import {Injectable} from '@angular/core';
 
+@Injectable()
 export class JRouteReuseStrategy implements RouteReuseStrategy {
 
-  static handles: {[key: string]: DetachedRouteHandle} = {};
+  constructor(
+    private _jRouteReuseStrategyService: JRouteReuseStrategyService
+  ) {
+  }
 
   // 决定该路由及其子路由是否允许之后被复用
   shouldDetach(route: ActivatedRouteSnapshot): boolean {  // route，之前的路由
@@ -23,14 +29,14 @@ export class JRouteReuseStrategy implements RouteReuseStrategy {
   store(route: ActivatedRouteSnapshot, handle: DetachedRouteHandle): void {  // route，之前的路由
 
     // 缓存路由
-    JRouteReuseStrategy.handles[this.getKey(route)] = handle;
+    this._jRouteReuseStrategyService.setHandle(route, handle);
   }
 
   // 决定该路由及其子路由是否允许被还原
   shouldAttach(route: ActivatedRouteSnapshot): boolean {  // route，当前的路由
 
     // 缓存中存在该路由时，允许还原
-    return !!route.routeConfig && !!JRouteReuseStrategy.handles[this.getKey(route)];
+    return !!route.routeConfig && !!this._jRouteReuseStrategyService.getHandle(route);
   }
 
   // 获取之前被缓存的路由
@@ -39,17 +45,12 @@ export class JRouteReuseStrategy implements RouteReuseStrategy {
       return null;
     }
 
-    return JRouteReuseStrategy.handles[this.getKey(route)];
+    return this._jRouteReuseStrategyService.getHandle(route);
   }
 
   // 进入路由时触发，决定是否同一路由时复用该路由
   shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot): boolean {
 
     return future.routeConfig === curr.routeConfig && JSON.stringify(future.params) === JSON.stringify(curr.params);
-  }
-
-  private getKey(route: any) {
-
-    return route._routerState.url.replace(/\//g, '_');
   }
 }

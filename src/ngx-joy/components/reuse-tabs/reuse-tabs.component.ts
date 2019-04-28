@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router, NavigationEnd, DetachedRouteHandle} from '@angular/router';
 import {filter, map} from 'rxjs/operators';
-import {JRouteReuseStrategy} from './route-reuse-strategy';
+import {JRouteReuseStrategyService} from './route-reuse-strategy.service';
 import {JNavItem} from '../nav/nav.component';
 import {JNavService} from '../nav/nav.service';
 import {JReuseTabsContextMenuService} from './context-menu/context-menu.service';
@@ -34,7 +34,8 @@ export class JReuseTabsComponent implements OnInit {
     private _activatedRoute: ActivatedRoute,
     private _router: Router,
     private _jNavService: JNavService,
-    private _jContextMenuService: JReuseTabsContextMenuService
+    private _jContextMenuService: JReuseTabsContextMenuService,
+    private _jRouteReuseStrategyService: JRouteReuseStrategyService
   ) {
   }
 
@@ -100,7 +101,7 @@ export class JReuseTabsComponent implements OnInit {
     }
 
     setTimeout(() => {
-      delete JRouteReuseStrategy.handles[tab.url.replace(/\//g, '_')];
+      this._jRouteReuseStrategyService.deleteHandleByUrl(tab.url);
     });
   }
 
@@ -135,14 +136,13 @@ export class JReuseTabsComponent implements OnInit {
   }
 
   private _closeOther(tab: JTab) {
-    const key = tab.url.replace(/\//g, '_');
-    const routeHandle: DetachedRouteHandle = JRouteReuseStrategy.handles[key];
+    const routeHandle: DetachedRouteHandle = this._jRouteReuseStrategyService.getHandleByUrl(tab.url);
     this.tabs = [tab];
     this.activeIndex = 0;
 
     setTimeout(() => {
-      JRouteReuseStrategy.handles = {};
-      JRouteReuseStrategy.handles[key] = routeHandle;
+      this._jRouteReuseStrategyService.clearHandles();
+      this._jRouteReuseStrategyService.setHandleByUrl(tab.url, routeHandle);
     });
   }
 
@@ -150,7 +150,7 @@ export class JReuseTabsComponent implements OnInit {
 
     this.tabs = [];
     this.activeIndex = 0;
-    JRouteReuseStrategy.handles = {};
+    this._jRouteReuseStrategyService.clearHandles();
     this._router.navigate([this._defaultUrl]);
   }
 }

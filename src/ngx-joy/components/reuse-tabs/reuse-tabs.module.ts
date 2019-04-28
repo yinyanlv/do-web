@@ -4,6 +4,7 @@ import {MatButtonModule, MatTabsModule, MatIconModule, MatMenuModule, MatDivider
 import {JReuseTabsComponent} from './reuse-tabs.component';
 import {JReuseTabsContextMenuComponent} from './context-menu/context-menu.component';
 import {JReuseTabsContextMenuDirective} from './context-menu/context-menu.directive';
+import {JRouteReuseStrategyService} from './route-reuse-strategy.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,9 @@ import {JReuseTabsContextMenuDirective} from './context-menu/context-menu.direct
   ],
   exports: [
     JReuseTabsComponent
+  ],
+  providers: [
+    JRouteReuseStrategyService
   ],
   entryComponents: [
     JReuseTabsContextMenuComponent
