@@ -7,6 +7,9 @@ const routes: Routes = [{
 }, {
   path: 'article',
   loadChildren: './pages/article/article.module#ArticleModule'
+}, {
+  path: 'user',
+  loadChildren: './pages/user/user.module#UserModule'
 }];
 
 export const appRoutingModule: ModuleWithProviders = RouterModule.forRoot(routes, {

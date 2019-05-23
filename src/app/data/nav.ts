@@ -31,11 +31,11 @@ export const navItems: JNavItem[] = [
       },
       {
         id: 'calendar',
-        title: 'Calendar',
+        title: 'user',
         translate: 'NAV.CALENDAR',
         type: 'item',
         icon: 'today',
-        url: '/apps/calendar'
+        url: '/user'
       },
       {
         id: 'e-commerce',
