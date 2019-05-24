@@ -1,3 +1,45 @@
-<p>
-  grid works!
-</p>
+<div>
+  <div class="header">列表区域</div>
+  <div class="content" style="height: 100px;">
+    <ngx-datatable
+      class="material"
+      [rows]="rows"
+      [loadingIndicator]="loadingIndicator"
+      [columnMode]="'force'"
+      [headerHeight]="48"
+      [footerHeight]="56"
+      [rowHeight]="48"
+      [scrollbarV]="true"
+      [scrollbarH]="true"
+      [reorderable]="true"
+      [selectionType]="'checkbox'"
+      [limit]="5"
+    >
+      <ngx-datatable-column [width]="48" [canAutoResize]="false" [sortable]="false">
+        <ng-template ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected"
+                     let-selectFn="selectFn">
+          <mat-checkbox [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)"></mat-checkbox>
+        </ng-template>
+
+        <ng-template ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                     let-onCheckboxChangeFn="onCheckboxChangeFn">
+          <mat-checkbox [checked]="isSelected" (change)="onCheckboxChangeFn($event)"></mat-checkbox>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="用户名" prop="name"></ngx-datatable-column>
+      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
+      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
+      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
+      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
+      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
+      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
+      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
+      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
+      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
+      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
+      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
+      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
+      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+</div>

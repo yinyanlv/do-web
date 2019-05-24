@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
   selector: 'grid',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GridComponent implements OnInit {
 
-  constructor() { }
+  rows: any[] = [];
+  loadingIndicator: boolean = true;
 
-  ngOnInit() {
+  private _unsubscribeAll: Subject<any> = new Subject();
+
+  constructor(
+    private _httpClient: HttpClient
+  ) {
   }
 
+  ngOnInit() {
+    this._httpClient.get('api/contacts')
+      .pipe(takeUntil(this._unsubscribeAll))
+      .subscribe((data: any) => {
+        this.rows = data;
+        this.loadingIndicator = false;
+      });
+  }
+
+  ngOnDestory() {
+
+    this._unsubscribeAll.next();
+    this._unsubscribeAll.complete();
+  }
 }
