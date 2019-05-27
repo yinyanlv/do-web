@@ -20,6 +20,10 @@ import {GridComponent} from './grid/grid.component';
     MatButtonModule,
     MatCheckboxModule,
     NgxDatatableModule
+  ],
+  entryComponents: [
+    QueryComponent,
+    GridComponent
   ]
 })
 export class UserModule {
