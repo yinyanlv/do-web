@@ -3,9 +3,13 @@
     <span>查询区域</span>
   </div>
   <form>
-    <mat-form-field appearance="outline">
-      <mat-label>用户名</mat-label>
-      <input matInput name="username" />
+    <mat-form-field appearance="outline" >
+      <mat-label>测试</mat-label>
+      <input matInput name="dddd" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" *ngFor="let item of fields">
+      <mat-label>{{item.label}}</mat-label>
+      <input matInput [name]="item.name" />
     </mat-form-field>
   </form>
   <div class="footer">

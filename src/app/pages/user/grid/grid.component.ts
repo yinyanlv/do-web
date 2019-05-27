@@ -12,6 +12,52 @@ export class GridComponent implements OnInit {
 
   rows: any[] = [];
   loadingIndicator: boolean = true;
+  columns: any[] = [{
+    name: '用户名',
+    prop: 'name'
+  }, {
+    name: '公司',
+    prop: 'company'
+  }, {
+    name: '公司',
+    prop: 'company'
+  }, {
+    name: '公司',
+    prop: 'company'
+  }, {
+    name: '公司',
+    prop: 'company'
+  }, {
+    name: '公司',
+    prop: 'company'
+  }, {
+    name: '公司',
+    prop: 'company'
+  }, {
+    name: '公司',
+    prop: 'company'
+  }, {
+    name: '公司',
+    prop: 'company'
+  }, {
+    name: '公司',
+    prop: 'company'
+  }, {
+    name: '公司',
+    prop: 'company'
+  }, {
+    name: '公司',
+    prop: 'company'
+  }, {
+    name: '公司',
+    prop: 'company'
+  }, {
+    name: '公司',
+    prop: 'company'
+  }, {
+    name: '公司',
+    prop: 'company'
+  }];
 
   private _unsubscribeAll: Subject<any> = new Subject();
 

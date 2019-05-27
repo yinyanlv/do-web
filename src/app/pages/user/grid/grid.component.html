@@ -25,20 +25,7 @@
           <mat-checkbox [checked]="isSelected" (change)="onCheckboxChangeFn($event)"></mat-checkbox>
         </ng-template>
       </ngx-datatable-column>
-      <ngx-datatable-column name="用户名" prop="name"></ngx-datatable-column>
-      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
-      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
-      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
-      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
-      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
-      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
-      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
-      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
-      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
-      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
-      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
-      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
-      <ngx-datatable-column name="公司" prop="company"></ngx-datatable-column>
+      <ngx-datatable-column *ngFor="let item of columns;" [name]="item.name" [prop]="item.prop"></ngx-datatable-column>
     </ngx-datatable>
   </div>
 </div>

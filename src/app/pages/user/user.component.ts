@@ -16,18 +16,16 @@ export class UserComponent implements OnInit {
   ) {
   }
 
-  @ViewChild('container', {
+  @ViewChild('queryGridContainer', {
     read: ViewContainerRef
   })
-  container: ViewContainerRef;
+  queryGridContainer: ViewContainerRef;
 
   ngOnInit(
   ) {
     const queryFactory = this._cmpFactoryResolver.resolveComponentFactory(QueryComponent);
     const gridFactory = this._cmpFactoryResolver.resolveComponentFactory(GridComponent);
-    this.container.createComponent(queryFactory);
-    this.container.createComponent(gridFactory);
-
-    console.log(this.container);
+    this.queryGridContainer.createComponent(queryFactory);
+    this.queryGridContainer.createComponent(gridFactory);
   }
 }
