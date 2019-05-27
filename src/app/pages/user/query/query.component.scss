@@ -1,8 +1,35 @@
-.footer{
-  display: flex;
-  justify-content: center;
+.query-panel{
+  background: #fff;
+  padding: 10px;
+  flex: 1;
 
-  button {
-    margin-right: 20px;
+  .header{
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 5px;
+
+    span{
+      border-left: 2px solid #4285F4;
+      padding-left: 10px;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+
+    .field {
+      margin-right: 20px;
+    }
+  }
+
+  .footer{
+    display: flex;
+    justify-content: center;
+
+    button {
+      margin-right: 20px;
+    }
   }
 }
+

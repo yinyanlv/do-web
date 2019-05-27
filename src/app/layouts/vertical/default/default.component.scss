@@ -39,12 +39,13 @@ vertical-layout-default {
           display: flex;
           flex: 1 1 0%;
           flex-direction: column;
-          overflow-x: hidden;
-          overflow-y: auto;
+          overflow:hidden;
           -webkit-overflow-scrolling: touch;
 
           // Content component
           j-content {
+            flex: 1;
+            overflow:hidden;
 
             &.inner-scroll {
               flex: 1 1 0%;

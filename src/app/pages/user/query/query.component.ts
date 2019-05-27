@@ -1,26 +1,52 @@
-import {Component, ComponentRef, OnInit, ViewChildren} from '@angular/core';
-import {MatFormField} from '@angular/material';
+import {AfterViewInit, Component, ComponentRef, OnInit, QueryList, ViewChildren} from '@angular/core';
+import {MatFormField, MatInput} from '@angular/material';
 
 @Component({
   selector: 'query',
   templateUrl: './query.component.html',
   styleUrls: ['./query.component.scss']
 })
-export class QueryComponent implements OnInit {
+export class QueryComponent implements OnInit, AfterViewInit {
 
   fields: any[] = [{
     type: 'text',
     label: '用户名',
     name: 'name'
+  }, {
+    type: 'text',
+    label: '用户名',
+    name: 'name'
+  }, {
+    type: 'text',
+    label: '用户名',
+    name: 'name'
+  }, {
+    type: 'text',
+    label: '用户名',
+    name: 'name'
+  }, {
+    type: 'text',
+    label: '用户名',
+    name: 'name'
+  }, {
+    type: 'text',
+    label: '用户名',
+    name: 'name'
+  }, {
+    type: 'text',
+    label: '用户名',
+    name: 'name'
   }];
 
-  @ViewChildren(MatFormField)
-  fieldCmps: ComponentRef<MatFormField>[];
+  @ViewChildren(MatInput)
+  fieldComponents: QueryList<MatInput>;
 
   constructor() {
   }
 
   ngOnInit() {
-    console.log(this.fieldCmps);
+  }
+
+  ngAfterViewInit() {
   }
 }

@@ -1,17 +1,13 @@
-<div class="query">
+<div class="query-panel">
   <div class="header">
     <span>查询区域</span>
   </div>
-  <form>
-    <mat-form-field appearance="outline" >
-      <mat-label>测试</mat-label>
-      <input matInput name="dddd" />
-    </mat-form-field>
-    <mat-form-field appearance="outline" *ngFor="let item of fields">
+  <div class="content">
+    <mat-form-field class="field" appearance="outline" *ngFor="let item of fields">
       <mat-label>{{item.label}}</mat-label>
-      <input matInput [name]="item.name" />
+      <input matInput [name]="item.name"/>
     </mat-form-field>
-  </form>
+  </div>
   <div class="footer">
     <button mat-raised-button color="primary">查询</button>
     <button mat-raised-button color="accent">重置</button>

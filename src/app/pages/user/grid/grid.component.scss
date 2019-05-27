@@ -1,0 +1,33 @@
+::ng-deep grid{
+  flex: 1;
+  margin-top: 10px;
+  display: flex;
+}
+
+.grid-panel{
+  background: #fff;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  .header{
+    height: 40px;
+    line-height: 30px;
+    margin-bottom: 5px;
+    padding: 10px 10px 0 10px;
+
+    span{
+      border-left: 2px solid #4285F4;
+      padding-left: 10px;
+    }
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+
+    ngx-datatable{
+      flex: 1;
+    }
+  }
+}
