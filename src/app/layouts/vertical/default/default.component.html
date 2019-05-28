@@ -25,15 +25,15 @@
       <div id="container-3" class="container" jPerfectScrollbar
            [jPerfectScrollbarOptions]="{suppressScrollX: true, updateOnRouteChange : true}">
 
-        <div class="reuse-tabs-wrapper">
-          <j-reuse-tabs></j-reuse-tabs>
-        </div>
-
         <!-- TOOLBAR: Below static -->
         <ng-container *ngIf="jConfig.layout.toolbar.position === 'below-static'">
           <ng-container *ngTemplateOutlet="toolbar"></ng-container>
         </ng-container>
         <!-- / TOOLBAR: Below static -->
+
+        <div class="reuse-tabs-wrapper">
+          <j-reuse-tabs></j-reuse-tabs>
+        </div>
 
         <!-- CONTENT -->
         <j-content></j-content>

@@ -49,4 +49,16 @@ export class QueryComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
   }
+
+  doQuery() {
+    this.fieldComponents.forEach((item) => {
+        console.log(item.value);
+    });
+  }
+
+  doReset() {
+    this.fieldComponents.forEach((item) => {
+      console.log(item.value);
+    });
+  }
 }
