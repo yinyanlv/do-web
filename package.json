@@ -27,7 +27,7 @@
     "angular-in-memory-web-api": "^0.8.0",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "material-design-icons": "^3.0.1",
     "ngx-cookie-service": "^2.1.0",
     "ngx-joy": "0.0.2",
